@@ -43,11 +43,11 @@
         </div>
         <div class="input-field col s12 m3">
             <select class="custom-select" id="inputGroupSelect01">
-                <option value="1">98 - Vendas Online</option>
-                <option value="2">99 - Congresso 2018</option>
-                <option value="2">102 - ESOR 2018</option>
-                <option value="2">105 - Congresso 2019</option>
-                <option value="2">Outro... (mande e-mail informando)</option>
+                <option value="98">[98] Vendas Online</option>
+                <option value="99">[99] Congresso 2018</option>
+                <option value="102">[102] ESOR 2018</option>
+                <option value="105">[105] Congresso 2019</option>
+                <option value="0">Outro... (mande e-mail informando)</option>
             </select>  
             <label for="form1">Centro de custo</label>
         </div>
@@ -55,13 +55,13 @@
       <div class="row">
         <div class="input-field col s12 m6">
             <select class="custom-select" id="inputGroupSelect01">
-                <option value="1">(10) 1.1.06 - Inscrições Curso - AVR</option>
-                <option value="2">(29) 1.4.01.02 - Congresso Brasileiro Radiologia</option>
-                <option value="2">(586) 1.4.01.10 - Curso de Gestão FDC ABCDI</option>                
-                <option value="2">(588) 1.4.01.11 - ESOR - Curso de Radiologia</option>
-                <option value="2">(288) 1.8.01 - Inscrições para Curso [PADI]</option>
-                <option value="2">(591) 1.8.03 - Inscrições para Curso Gestão de Clínicas</option>
-                <option value="2">Outro... (mande e-mail informando)</option>
+                <option value="10">(10) 1.1.06 - Inscrições Curso - AVR</option>
+                <option value="29">(29) 1.4.01.02 - Congresso Brasileiro Radiologia</option>
+                <option value="586">(586) 1.4.01.10 - Curso de Gestão FDC ABCDI</option>                
+                <option value="588">(588) 1.4.01.11 - ESOR - Curso de Radiologia</option>
+                <option value="288">(288) 1.8.01 - Inscrições para Curso [PADI]</option>
+                <option value="591">(591) 1.8.03 - Inscrições para Curso Gestão de Clínicas</option>
+                <option value="0">Outro... (mande e-mail informando)</option>
             </select>
             <label for="input_text" class="tooltipped" data-position="top" data-tooltip="Cada curso possui sua Conta Caixa. Qualquer dúvida sobre pergunte ao Financeiro">Conta Caixa <i class="material-icons">help</i></label>
         </div>
