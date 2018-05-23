@@ -1,7 +1,7 @@
+<?php include ('db_add.php');?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
     <title>Cursos</title>
     <!-- Deixe o browser saber que esse site serve em mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style type="text/css">
-    *{font-size: 14px !important;}
+    * { font-size: 14px !important; }
     p { display: inline }
     </style>
 </head>
@@ -19,23 +19,36 @@
 
 
 <!--Main Navigation-->
+<?php
+    $db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
+    $query = "SELECT * FROM tb_criar_cursos";
+?>
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper container">
       <a href="#" class="brand-logo" style="font-size: 20px;">Criar Curso</a>
+      <ul id="nav-mobile" class="right">
+        <li>
+            <select>
+                <option>AAA</option>
+                <option>BBB</option>
+                <option>CCC</option>
+            </select>
+        </li>
+      </ul>
     </div>
   </nav>
 <!--Main Navigation-->
             
 <div class="container">
   <div class="row">
-    <form class="col s12" method="POST" action="db_add.php">
+    <form class="col s12" method="POST" action="#">
       <div class="row">
         <div class="input-field col s6 m6">
-            <input id="nomeCurso" type="text" class="contar" data-length="80" onkeyup="trocarTitulo()" required>
+            <input name="nomeCurso" type="text" class="contar" data-length="80" onkeyup="trocarTitulo()" required>
             <label for="nomeCurso" class="tooltipped" data-position="top" data-tooltip="Nome que aparecerá no momento da compra">Nome do curso <i class="material-icons">help</i></label>
         </div>
         <div class="input-field col s6 m2">
-            <select>
+            <select name="slctTipoAtv">
                 <option value="1">Curso Presencial</option>
                 <option value="2">Curso On-line</option>
                 <option value="3">Livro</option>
@@ -43,7 +56,7 @@
             <label for="form1">Tipo de atividade</label>
         </div>
         <div class="input-field col s12 m3">
-            <select class="custom-select" id="inputGroupSelect01">
+            <select class="custom-select" name="slctCentroCusto">
                 <option value="98">[98] Vendas Online</option>
                 <option value="99">[99] Congresso 2018</option>
                 <option value="102">[102] ESOR 2018</option>
@@ -55,7 +68,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
-            <select class="custom-select" id="inputGroupSelect01">
+            <select class="custom-select" name="slctContaCaixa">
                 <option value="10">(10) 1.1.06 - Inscrições Curso - AVR</option>
                 <option value="29">(29) 1.4.01.02 - Congresso Brasileiro Radiologia</option>
                 <option value="586">(586) 1.4.01.10 - Curso de Gestão FDC ABCDI</option>                
@@ -69,7 +82,7 @@
         <div class="input-field col s4 m2">
             <p>
                 <label>
-                    <input type="checkbox" class="filled-in"/>
+                    <input type="checkbox" class="filled-in" name="cbxCertificado" />
                     <span>Imprimir Certificado</span>
                 </label>
             </p>
@@ -77,7 +90,7 @@
         <div class="input-field col s4 m2">
             <p>
                 <label>
-                    <input type="checkbox" class="filled-in"/>
+                    <input type="checkbox" class="filled-in" name="cbxPresenca"/>
                     <span>Considerar presença</span>
                 </label>
             </p>
@@ -85,7 +98,7 @@
         <div class="input-field col s4 m2">
             <p>
                 <label>
-                    <input type="checkbox" class="filled-in"/>
+                    <input type="checkbox" class="filled-in" name="cbxEtiqueta" />
                     <span>Imprimir etiqueta</span>
                 </label>
             </p>
@@ -93,37 +106,37 @@
       </div>
       <div class="row">
         <div class="input-field col s6 m3">
-            <input id="datainicial" type="text" class="datepicker" onchange="trocarTitulo()" required>
+            <input id="datainicial" name="datainicial" type="text" class="datepicker" onchange="trocarTitulo()" required>
             <label for="datainicial">Data do Curso</label>
         </div>
         <div class="input-field col s6 m3">
-            <input id="datafinal" type="text" class="datepicker" onchange="trocarTitulo()" required>
+            <input id="datafinal" name="datafinal" type="text" class="datepicker" onchange="trocarTitulo()" required>
             <label for="datafinal">Data Final do Curso</label>
         </div>
         <div class="input-field col s6 m3">
-            <input id="horainicial" type="text" class="timepicker" onchange="trocarTitulo()">
+            <input id="horainicial" name="horainicial" type="text" class="timepicker" onchange="trocarTitulo()">
             <label for="horainicial" class="tooltipped" data-position="top" data-tooltip="Caso o curso ocorrerá em mais de um dia com horários diferentes deixe em branco">Hora do Curso <i class="material-icons">help</i></label>
         </div>
         <div class="input-field col s6 m3">
-            <input id="horafinal" type="text" class="timepicker" onchange="trocarTitulo()">
+            <input id="horafinal" name="horafinal" type="text" class="timepicker" onchange="trocarTitulo()">
             <label for="horafinal">Hora Final do Curso</label>
         </div>
       </div>
     <div class="row">
         <div class="input-field col s6 m3">
-            <input id="InscricoesInicio" type="text" class="datepicker" required>
+            <input id="InscricoesInicio" name="InscricoesInicio" type="text" class="datepicker" required>
             <label for="InscricoesInicio">Início das Inscrições</label>
         </div>
         <div class="input-field col s6 m3">
-            <input id="InscricoesFim" type="text" class="datepicker" required>
+            <input id="InscricoesFim" name="InscricoesFim" type="text" class="datepicker" required>
             <label for="InscricoesFim">Fim das Inscrições</label>
         </div>
         <div class="input-field col s6 m3">
-            <input id="vagas" type="number" required>
+            <input id="vagas" name="vagas" type="number" required>
             <label for="vagas">Vagas</label>
         </div>
         <div class="input-field col s6 m3">
-            <input id="cargaHoraria" type="number">
+            <input id="cargaHoraria" name="cargaHoraria" type="number">
             <label for="cargaHoraria">Carga Horária</label>
             <span class="helper-text" data-error="wrong" data-success="right">horas</span>
         </div>
@@ -175,7 +188,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <select id="selectJanelas" onchange="janelasPgto()">
+                <select name="selectJanelas" onchange="janelasPgto()">
                     <option value="1">1 janela</option>
                     <option value="2">2 janelas</option>
                     <option value="3">3 janelas</option>
@@ -186,206 +199,206 @@
         </div>
         <div class="col s6 m3">
             <div class="input-field row">
-                <input id="dataInicialLote1" type="text" class="datepicker" required>
+                <input name="dataInicialLote1" type="text" class="datepicker" required>
                 <label for="dataInicialLote1">Data inicial do Lote 1</label>
             </div>
             <div class="input-field row">
-                <input id="dataFinalLote1" type="text" class="datepicker" required>
+                <input name="dataFinalLote1" type="text" class="datepicker" required>
                 <label for="dataFinalLote1">Data Final do Lote 1</label>
             </div>
             <div class="input-field row">
-                <input id="valor1" type="number" onkeyup="trocarTitulo()" required>
+                <input id="valor1" name="valor1" type="number" onkeyup="trocarTitulo()" required>
                 <label for="valor1">Valor normal, sem desconto</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioCBR1" type="number" onkeyup="trocarTitulo()" required>
+                <input id="valorSocioCBR1" name="valorSocioCBR1" type="number" onkeyup="trocarTitulo()" required>
                 <label for="valorSocioCBR1">Valor Sócio CBR</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioABCDI1" type="number" onkeyup="trocarTitulo()" required>
+                <input id="valorSocioABCDI1" name="valorSocioABCDI1" type="number" onkeyup="trocarTitulo()" required>
                 <label for="valorSocioABCDI1">Valor Sócio ABCDI</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioNaoQuite1" type="number" onkeyup="trocarTitulo()" required>
+                <input id="valorSocioNaoQuite1" name="valorSocioNaoQuite1" type="number" onkeyup="trocarTitulo()" required>
                 <label for="valorSocioNaoQuite1">Valor Sócio não quite</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioParceiro1" type="number" onkeyup="trocarTitulo()" required>
+                <input id="valorSocioParceiro1" name="valorSocioParceiro1" type="number" onkeyup="trocarTitulo()" required>
                 <label for="valorSocioParceiro1">Valor Entidades Parceiras</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select id="selectVencimento1" onchange="tipoVencimento1()">
+                <select name="selectVencimento1" onchange="tipoVencimento1()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
             <div id="divNDias1" class="input-field row">
-                <input id="nDias1" type="number">
+                <input name="nDias1" type="number">
                 <label for="nDias1">n Dias</label>
             </div>
             <div id="divVenc1" class="input-field row">
-                <input id="vencimentoLote1" type="text" class="datepicker">
+                <input name="vencimentoLote1" type="text" class="datepicker">
                 <label id="labelVenc1" for="vencimentoLote1">Limite de vencimento</label>
             </div>
         </div>
         <div style="display: none" id="divJanela2" class="col s6 m3">
             <div class="input-field row">
-                <input id="dataInicialLote2" type="text" class="datepicker">
+                <input name="dataInicialLote2" type="text" class="datepicker">
                 <label for="dataInicialLote2">Data inicial do Lote 2</label>
             </div>
             <div class="input-field row">
-                <input id="dataFinalLote2" type="text" class="datepicker">
+                <input name="dataFinalLote2" type="text" class="datepicker">
                 <label for="dataFinalLote2">Data Final do Lote 2</label>
             </div>
             <div class="input-field row">
-                <input id="valor2" type="number" onkeyup="trocarTitulo()">
+                <input name="valor2" type="number" onkeyup="trocarTitulo()">
                 <label for="valor2">Valor normal, sem desconto</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioCBR2" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioCBR2" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioCBR2">Valor Sócio CBR</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioABCDI2" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioABCDI2" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioABCDI2">Valor Sócio ABCDI</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioNaoQuite2" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioNaoQuite2" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioNaoQuite2">Valor Sócio não quite</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioParceiro2" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioParceiro2" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioParceiro2">Valor Entidades Parceiras</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select id="selectVencimento2" onchange="tipoVencimento2()">
+                <select name="selectVencimento2" onchange="tipoVencimento2()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div id="divNDias2" class="input-field row">
-                <input id="nDias2" type="number">
+            <div name="divNDias2" class="input-field row">
+                <input name="nDias2" type="number">
                 <label for="nDias2">n Dias</label>
             </div>
-            <div id="divVenc2" class="input-field row">
-                <input id="vencimentoLote2" type="text" class="datepicker">
-                <label id="labelVenc2" for="vencimentoLote2">Limite de vencimento</label>
+            <div name="divVenc2" class="input-field row">
+                <input name="vencimentoLote2" type="text" class="datepicker">
+                <label name="labelVenc2" for="vencimentoLote2">Limite de vencimento</label>
             </div>
         </div>
-        <div style="display: none" id="divJanela3" class="col s6 m3">
+        <div style="display: none" name="divJanela3" class="col s6 m3">
             <div class="input-field row">
-                <input id="dataInicialLote3" type="text" class="datepicker">
+                <input name="dataInicialLote3" type="text" class="datepicker">
                 <label for="dataInicialLote3">Data inicial do Lote 3</label>
             </div>
             <div class="input-field row">
-                <input id="dataFinalLote3" type="text" class="datepicker">
+                <input name="dataFinalLote3" type="text" class="datepicker">
                 <label for="dataFinalLote3">Data Final do Lote 3</label>
             </div>
             <div class="input-field row">
-                <input id="valor3" type="number" onkeyup="trocarTitulo()">
+                <input name="valor3" type="number" onkeyup="trocarTitulo()">
                 <label for="valor3">Valor normal, sem desconto</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioCBR3" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioCBR3" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioCBR3">Valor Sócio CBR</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioABCDI3" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioABCDI3" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioABCDI3">Valor Sócio ABCDI</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioNaoQuite3" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioNaoQuite3" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioNaoQuite3">Valor Sócio não quite</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioParceiro3" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioParceiro3" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioParceiro3">Valor Entidades Parceiras</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select id="selectVencimento3" onchange="tipoVencimento3()">
+                <select name="selectVencimento3" onchange="tipoVencimento3()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div id="divNDias3" class="input-field row">
-                <input id="nDias3" type="number">
+            <div name="divNDias3" class="input-field row">
+                <input name="nDias3" type="number">
                 <label for="nDias3">n Dias</label>
             </div>
-            <div id="divVenc3" class="input-field row">
-                <input id="vencimentoLote3" type="text" class="datepicker">
-                <label id="labelVenc3" for="vencimentoLote3">Limite de vencimento</label>
+            <div name="divVenc3" class="input-field row">
+                <input name="vencimentoLote3" type="text" class="datepicker">
+                <label name="labelVenc3" for="vencimentoLote3">Limite de vencimento</label>
             </div>
         </div>
-        <div style="display: none" id="divJanela4" class="col s6 m3">
+        <div style="display: none" name="divJanela4" class="col s6 m3">
             <div class="input-field row">
-                <input id="dataInicialLote4" type="text" class="datepicker">
+                <input name="dataInicialLote4" type="text" class="datepicker">
                 <label for="dataInicialLote4">Data inicial do Lote 4</label>
             </div>
             <div class="input-field row">
-                <input id="dataFinalLote4" type="text" class="datepicker">
+                <input name="dataFinalLote4" type="text" class="datepicker">
                 <label for="dataFinalLote4">Data Final do Lote 4</label>
             </div>
             <div class="input-field row">
-                <input id="valor4" type="number" onkeyup="trocarTitulo()">
+                <input name="valor4" type="number" onkeyup="trocarTitulo()">
                 <label for="valor4">Valor normal, sem desconto</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioCBR4" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioCBR4" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioCBR4">Valor Sócio CBR</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioABCDI4" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioABCDI4" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioABCDI4">Valor Sócio ABCDI</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioNaoQuite4" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioNaoQuite4" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioNaoQuite4">Valor Sócio não quite</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <input id="valorSocioParceiro4" type="number" onkeyup="trocarTitulo()">
+                <input name="valorSocioParceiro4" type="number" onkeyup="trocarTitulo()">
                 <label for="valorSocioParceiro4">Valor Entidades Parceiras</label>
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select id="selectVencimento4" onchange="tipoVencimento4()">
+                <select name="selectVencimento4" onchange="tipoVencimento4()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div id="divNDias4" class="input-field row">
-                <input id="nDias4" type="number">
+            <div name="divNDias4" class="input-field row">
+                <input name="nDias4" type="number">
                 <label for="nDias4">n Dias</label>
             </div>
-            <div id="divVenc4" class="input-field row">
-                <input id="vencimentoLote4" type="text" class="datepicker">
-                <label id="labelVenc4" for="vencimentoLote4">Limite de vencimento</label>
+            <div name="divVenc4" class="input-field row">
+                <input name="vencimentoLote4" type="text" class="datepicker">
+                <label name="labelVenc4" for="vencimentoLote4">Limite de vencimento</label>
             </div>
         </div>
         <div class="input-field col s12 center">
-            <button class="btn waves-effect waves-light" type="submit" style='padding: 20px 80px; border-radius: 12px; line-height: 8px;' name="action">Enviar
+            <button class="btn waves-effect waves-light" type="submit" style='padding: 20px 80px; border-radius: 12px; line-height: 8px;' name="btnCriarCurso">Enviar
                 <i class="material-icons right">send</i>
               </button>
         </div>
@@ -421,7 +434,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 l6 boleto">
+                <div class="col s12 m6 boleto">
                     <img src="img/boleto.jpg" style="width:100%;">
                     <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
                     <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
@@ -448,7 +461,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 l6 boleto">
+                <div class="col s12 m6 boleto">
                     <img src="img/boleto.jpg" style="width:100%;">
                     <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
                     <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
@@ -475,7 +488,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 l6 boleto">
+                <div class="col s12 m6 boleto">
                     <img src="img/boleto.jpg" style="width:100%;">
                     <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
                     <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
@@ -502,7 +515,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 l6 boleto">
+                <div class="col s12 m6 boleto">
                     <img src="img/boleto.jpg" style="width:100%;">
                     <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
                     <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
@@ -529,7 +542,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 l6 boleto">
+                <div class="col s12 m6 boleto">
                     <img src="img/boleto.jpg" style="width:100%;">
                     <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
                     <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
