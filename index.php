@@ -19,21 +19,11 @@
 
 
 <!--Main Navigation-->
-<?php
-    $db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
-    $query = "SELECT * FROM tb_criar_cursos";
-?>
   <nav>
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo" style="font-size: 20px;">Criar Curso</a>
       <ul id="nav-mobile" class="right">
-        <li>
-            <select>
-                <option>AAA</option>
-                <option>BBB</option>
-                <option>CCC</option>
-            </select>
-        </li>
+        <li><a class="waves-effect waves-light btn modal-trigger" href="#modalSalvos">Cursos Salvos</a></li>
       </ul>
     </div>
   </nav>
@@ -43,8 +33,8 @@
   <div class="row">
     <form class="col s12" method="POST" action="#">
       <div class="row">
-        <div class="input-field col s6 m6">
-            <input name="nomeCurso" type="text" class="contar" data-length="80" onkeyup="trocarTitulo()" required>
+        <div class="input-field col s6 m7">
+            <input id="nomeCurso" name="nomeCurso" type="text" class="contar" data-length="80" onkeyup="trocarTitulo()" required>
             <label for="nomeCurso" class="tooltipped" data-position="top" data-tooltip="Nome que aparecerá no momento da compra">Nome do curso <i class="material-icons">help</i></label>
         </div>
         <div class="input-field col s6 m2">
@@ -553,6 +543,24 @@
     </div>
 </div>
 
+  <!-- Modal Structure -->
+  <div id="modalSalvos" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h4>Cursos salvos</h4>
+        <?php
+            $db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
+            $query = "SELECT id, nome FROM tb_criar_cursos";
+            $result = mysqli_query($db, $query);
+            while ($curso = mysqli_fetch_assoc($result)){
+                echo "<a class='waves-effect waves-light btn-small green' value='".$curso['id']."'>";
+                echo $curso['nome'];
+                echo "</a>";
+                echo "<br>";
+                echo "<br>";
+            }
+        ?>
+    </div>
+  </div>
 
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
