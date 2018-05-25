@@ -256,7 +256,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <select name="selectJanelas" onchange="janelasPgto()">
+                <select name="selectJanelas" onchange="janelasPgto()" id="">
                     <option value="1">1 janela</option>
                     <option value="2">2 janelas</option>
                     <option value="3">3 janelas</option>
