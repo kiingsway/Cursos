@@ -256,7 +256,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <select name="selectJanelas" onchange="janelasPgto()" id="">
+                <select name="selectJanelas" id="selectJanelas" onchange="janelasPgto()" id="">
                     <option value="1">1 janela</option>
                     <option value="2">2 janelas</option>
                     <option value="3">3 janelas</option>
@@ -300,18 +300,18 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento1" onchange="tipoVencimento1()">
+                <select name="selectVencimento1" id="selectVencimento1" onchange="tipoVencimento1()">
                     <option value="1" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 1) echo 'checked'; ?>>Inscrição +n dias</option>
                     <option value="2" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 2) echo 'checked'; ?>>Fixo</option>
                     <option value="3" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 3) echo 'checked'; ?>>Data da Inscrição</option>
                 </select>
             </div>
             <div id="divNDias1" class="input-field row">
-                <input name="nDias1" type="number" <?php if (isset($_GET['curso'])) echo 'value="'.$n_dias_lote1.'"'; ?>>
+                <input id="nDias1" type="number" <?php if (isset($_GET['curso'])) echo 'value="'.$n_dias_lote1.'"'; ?>>
                 <label for="nDias1">n Dias</label>
             </div>
             <div id="divVenc1" class="input-field row">
-                <input name="vencimentoLote1" type="text" class="datepicker" <?php if (isset($_GET['curso'])) echo 'value="'.$limite_vencimento_lote1.'"'; ?>>
+                <input id="vencimentoLote1" type="text" class="datepicker" <?php if (isset($_GET['curso'])) echo 'value="'.$limite_vencimento_lote1.'"'; ?>>
                 <label id="labelVenc1" for="vencimentoLote1">Limite de vencimento</label>
             </div>
         </div>
@@ -350,22 +350,22 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento2" onchange="tipoVencimento2()">
+                <select name="selectVencimento2" id="selectVencimento2" onchange="tipoVencimento2()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div name="divNDias2" class="input-field row">
+            <div id="divNDias2" class="input-field row">
                 <input name="nDias2" type="number">
                 <label for="nDias2">n Dias</label>
             </div>
-            <div name="divVenc2" class="input-field row">
+            <div id="divVenc2" class="input-field row">
                 <input name="vencimentoLote2" type="text" class="datepicker">
                 <label name="labelVenc2" for="vencimentoLote2">Limite de vencimento</label>
             </div>
         </div>
-        <div style="display: none" name="divJanela3" class="col s6 m3">
+        <div style="display: none" id="divJanela3" class="col s6 m3">
             <div class="input-field row">
                 <input name="dataInicialLote3" type="text" class="datepicker">
                 <label for="dataInicialLote3">Data inicial do Lote 3</label>
@@ -400,22 +400,22 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento3" onchange="tipoVencimento3()">
+                <select name="selectVencimento3" id="selectVencimento3" onchange="tipoVencimento3()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div name="divNDias3" class="input-field row">
+            <div id="divNDias3" class="input-field row">
                 <input name="nDias3" type="number">
                 <label for="nDias3">n Dias</label>
             </div>
-            <div name="divVenc3" class="input-field row">
+            <div id="divVenc3" class="input-field row">
                 <input name="vencimentoLote3" type="text" class="datepicker">
                 <label name="labelVenc3" for="vencimentoLote3">Limite de vencimento</label>
             </div>
         </div>
-        <div style="display: none" name="divJanela4" class="col s6 m3">
+        <div style="display: none" id="divJanela4" class="col s6 m3">
             <div class="input-field row">
                 <input name="dataInicialLote4" type="text" class="datepicker">
                 <label for="dataInicialLote4">Data inicial do Lote 4</label>
@@ -450,17 +450,17 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento4" onchange="tipoVencimento4()">
+                <select name="selectVencimento4" id="selectVencimento4" onchange="tipoVencimento4()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div name="divNDias4" class="input-field row">
+            <div id="divNDias4" class="input-field row">
                 <input name="nDias4" type="number">
                 <label for="nDias4">n Dias</label>
             </div>
-            <div name="divVenc4" class="input-field row">
+            <div id="divVenc4" class="input-field row">
                 <input name="vencimentoLote4" type="text" class="datepicker">
                 <label name="labelVenc4" for="vencimentoLote4">Limite de vencimento</label>
             </div>
