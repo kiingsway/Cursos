@@ -474,151 +474,97 @@
   </div>
 
   <div class="row">
-        <div class="col s12">
-            <ul class="tabs">
-                <li class="tab col s2"><a class="active" href="#tab1">não Sócio</a></li>
-                <li class="tab col s2"><a href="#tab2">Sócio ABCDI</a></li>
-                <li class="tab col s2"><a href="#tab3">Sócio CBR</a></li>
-                <li class="tab col s3"><a href="#tab4">Sócio Não quite</a></li>
-                <li class="tab col s3"><a href="#tab5">Sócio Parceiros</a></li>
-            </ul>
-        </div>
-        <div id="tab1" class="col s12 m12">
-            <div class="row">
-                <div class="col s12 m6">
-                  <div class="card grey lighten-3">
-                    <div class="card-content">
-                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
-                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
-                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                      <p>
-                      <label>
+      <div class="col s12 m6">
+          <div class="card grey lighten-3">
+              <div class="card-content">
+                  <span class="card-text tituloCursoExemplo"></span><br><br>
+                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
+                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <p>
+                    <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorNaoSocioExemplo">R$ 2854,00</span>
-                      </label>
-                    </p>
-                    </div>
-                  </div>
-                </div>
+                        <span class="black-text" id="valorNaoSocioExemplo">R$ </span>
+                    </label>
+                </p>
+              </div>
+              <div class="card-action">
+                <p class="red-text">Não Sócio</p>
             </div>
-            <div class="row">
-                <div class="col s12 m6 boleto">
-                    <img src="img/boleto.jpg" style="width:100%;">
-                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
-                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
-                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
-                </div>
-            </div>
-        </div>
-        <div id="tab2" class="col s12 m12">
-            <div class="row">
-                <div class="col s12 m6">
-                  <div class="card grey lighten-3">
-                    <div class="card-content">
-                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
-                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
-                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                      <p>
-                      <label>
+          </div>
+      </div>
+      <div class="col s12 m6">
+          <div class="card grey lighten-3">
+              <div class="card-content">
+                  <span class="card-text tituloCursoExemplo"></span><br><br>
+                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
+                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <p>
+                    <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorABCDIExemplo">R$ 2854,00</span>
-                      </label>
-                    </p>
-                    </div>
-                  </div>
-                </div>
+                        <span class="black-text" id="valorCBRExemplo">R$ </span>
+                    </label>
+                </p>
+              </div>
+              <div class="card-action">
+                <p class="red-text">Sócio CBR</p>
             </div>
-            <div class="row">
-                <div class="col s12 m6 boleto">
-                    <img src="img/boleto.jpg" style="width:100%;">
-                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
-                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
-                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
-                </div>
-            </div>
-        </div>
-        <div id="tab3" class="col s12 m12">
-            <div class="row">
-                <div class="col s12 m6">
-                  <div class="card grey lighten-3">
-                    <div class="card-content">
-                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
-                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
-                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                      <p>
-                      <label>
+          </div>
+      </div>
+      <div class="col s12 m6">
+          <div class="card grey lighten-3">
+              <div class="card-content">
+                  <span class="card-text tituloCursoExemplo"></span><br><br>
+                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
+                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <p>
+                    <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorCBRExemplo">R$ 2854,00</span>
-                      </label>
-                    </p>
-                    </div>
-                  </div>
-                </div>
+                        <span class="black-text" id="valorABCDIExemplo">R$ </span>
+                    </label>
+                </p>
+              </div>
+              <div class="card-action">
+                <p class="red-text">Sócio ABCDI</p>
             </div>
-            <div class="row">
-                <div class="col s12 m6 boleto">
-                    <img src="img/boleto.jpg" style="width:100%;">
-                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
-                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
-                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
-                </div>
-            </div>
-        </div>
-        <div id="tab4" class="col s12 m12">
-            <div class="row">
-                <div class="col s12 m6">
-                  <div class="card grey lighten-3">
-                    <div class="card-content">
-                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
-                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
-                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                      <p>
-                      <label>
+          </div>
+      </div>
+      <div class="col s12 m6">
+          <div class="card grey lighten-3">
+              <div class="card-content">
+                  <span class="card-text tituloCursoExemplo"></span><br><br>
+                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
+                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <p>
+                    <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorNaoQuiteExemplo">R$ 2854,00</span>
-                      </label>
-                    </p>
-                    </div>
-                  </div>
-                </div>
+                        <span class="black-text" id="valorNaoQuiteExemplo">R$ </span>
+                    </label>
+                </p>
+              </div>
+              <div class="card-action">
+                <p class="red-text">Sócio Não Quite</p>
             </div>
-            <div class="row">
-                <div class="col s12 m6 boleto">
-                    <img src="img/boleto.jpg" style="width:100%;">
-                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
-                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
-                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
-                </div>
-            </div>
-        </div>
-        <div id="tab5" class="col s12 m12">
-            <div class="row">
-                <div class="col s12 m6">
-                  <div class="card grey lighten-3">
-                    <div class="card-content">
-                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
-                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
-                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                      <p>
-                      <label>
+          </div>
+      </div>
+      <div class="col s12 m6">
+          <div class="card grey lighten-3">
+              <div class="card-content">
+                  <span class="card-text tituloCursoExemplo"></span><br><br>
+                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
+                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <p>
+                    <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorParceirosExemplo">R$ 2854,00</span>
-                      </label>
-                    </p>
-                    </div>
-                  </div>
-                </div>
+                        <span class="black-text" id="valorParceirosExemplo">R$ </span>
+                    </label>
+                </p>
+              </div>
+              <div class="card-action">
+                <p class="red-text">Sócio Entidade Parceira</p>
             </div>
-            <div class="row">
-                <div class="col s12 m6 boleto">
-                    <img src="img/boleto.jpg" style="width:100%;">
-                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
-                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
-                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
-                </div>
-            </div>
-        </div>
-    </div>
+          </div>
+      </div>
+  </div>
 </div>
 
   <!-- Modal Structure -->
