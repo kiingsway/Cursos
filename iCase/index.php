@@ -166,7 +166,7 @@
 			<div class="container" style="background-color: #ccc; margin: auto; border-radius: 4px;"><br>
 				<div class="row">
 					<div class="col-2">
-						<label for="exampleInputEmail1"><b>Carga horária</b></label>
+						<label for="exampleInputEmail1">Carga horária</label>
 						<input type="email" class="form-control" id="exampleInputEmail1">
 					</div>
 				</div><br>

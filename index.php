@@ -257,11 +257,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-<<<<<<< HEAD
-                <select name="selectJanelas" id="selectJanelas" onchange="janelasPgto()" id="">
-=======
                 <select id="selectJanelas" name="selectJanelas" onchange="janelasPgto()">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
                     <option value="1">1 janela</option>
                     <option value="2">2 janelas</option>
                     <option value="3">3 janelas</option>
@@ -361,19 +357,11 @@
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-<<<<<<< HEAD
             <div id="divNDias2" class="input-field row">
                 <input name="nDias2" type="number">
                 <label for="nDias2">n Dias</label>
             </div>
             <div id="divVenc2" class="input-field row">
-=======
-            <div name="divNDias2" id="divNDias2" class="input-field row">
-                <input name="nDias2" type="number">
-                <label for="nDias2">n Dias</label>
-            </div>
-            <div name="divVenc2" id="divVenc2" class="input-field row">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
                 <input name="vencimentoLote2" type="text" class="datepicker">
                 <label name="labelVenc2" for="vencimentoLote2">Limite de vencimento</label>
             </div>
@@ -419,19 +407,11 @@
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-<<<<<<< HEAD
             <div id="divNDias3" class="input-field row">
                 <input name="nDias3" type="number">
                 <label for="nDias3">n Dias</label>
             </div>
             <div id="divVenc3" class="input-field row">
-=======
-            <div name="divNDias3" id="divNDias3" class="input-field row">
-                <input name="nDias3" type="number">
-                <label for="nDias3">n Dias</label>
-            </div>
-            <div name="divVenc3" id="divVenc3" class="input-field row">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
                 <input name="vencimentoLote3" type="text" class="datepicker">
                 <label name="labelVenc3" for="vencimentoLote3">Limite de vencimento</label>
             </div>
@@ -477,19 +457,11 @@
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-<<<<<<< HEAD
             <div id="divNDias4" class="input-field row">
                 <input name="nDias4" type="number">
                 <label for="nDias4">n Dias</label>
             </div>
             <div id="divVenc4" class="input-field row">
-=======
-            <div name="divNDias4" id="divNDias4" class="input-field row">
-                <input name="nDias4" type="number">
-                <label for="nDias4">n Dias</label>
-            </div>
-            <div name="divVenc4" id="divVenc4" class="input-field row">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
                 <input name="vencimentoLote4" type="text" class="datepicker">
                 <label name="labelVenc4" for="vencimentoLote4">Limite de vencimento</label>
             </div>
