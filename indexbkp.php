@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Compiled and minified Materialize CSS -->
     <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/loader.css">
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -23,7 +22,7 @@
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo" style="font-size: 20px;">Criar Curso</a>
       <ul id="nav-mobile" class="right">
-        <li><a class="waves-effect waves-light btn modal-trigger" href="#modalSalvos">Cursos Enviados</a></li>
+        <li><a class="waves-effect waves-light btn modal-trigger" href="#modalSalvos">Cursos Salvos</a></li>
       </ul>
     </div>
   </nav>
@@ -100,7 +99,7 @@
             
 <div class="container">
   <div class="row">
-    <form class="col s12" method="POST" action="#" onsubmit="abrirModalLoad()">
+    <form class="col s12" method="POST" action="#">
       <div class="row">
         <div class="input-field col s12 m7">
             <input id="nomeCurso" name="nomeCurso" type="text" class="contar" data-length="80" onkeyup="trocarTitulo()" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?> required>
@@ -257,11 +256,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-<<<<<<< HEAD
-                <select name="selectJanelas" id="selectJanelas" onchange="janelasPgto()" id="">
-=======
                 <select id="selectJanelas" name="selectJanelas" onchange="janelasPgto()">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
                     <option value="1">1 janela</option>
                     <option value="2">2 janelas</option>
                     <option value="3">3 janelas</option>
@@ -305,18 +300,18 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento1" id="selectVencimento1" onchange="tipoVencimento1()">
+                <select name="selectVencimento1" onchange="tipoVencimento1()">
                     <option value="1" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 1) echo 'checked'; ?>>Inscrição +n dias</option>
                     <option value="2" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 2) echo 'checked'; ?>>Fixo</option>
                     <option value="3" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 3) echo 'checked'; ?>>Data da Inscrição</option>
                 </select>
             </div>
             <div id="divNDias1" class="input-field row">
-                <input id="nDias1" type="number" <?php if (isset($_GET['curso'])) echo 'value="'.$n_dias_lote1.'"'; ?>>
+                <input name="nDias1" type="number" <?php if (isset($_GET['curso'])) echo 'value="'.$n_dias_lote1.'"'; ?>>
                 <label for="nDias1">n Dias</label>
             </div>
             <div id="divVenc1" class="input-field row">
-                <input id="vencimentoLote1" type="text" class="datepicker" <?php if (isset($_GET['curso'])) echo 'value="'.$limite_vencimento_lote1.'"'; ?>>
+                <input name="vencimentoLote1" type="text" class="datepicker" <?php if (isset($_GET['curso'])) echo 'value="'.$limite_vencimento_lote1.'"'; ?>>
                 <label id="labelVenc1" for="vencimentoLote1">Limite de vencimento</label>
             </div>
         </div>
@@ -355,25 +350,17 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento2" id="selectVencimento2" onchange="tipoVencimento2()">
+                <select name="selectVencimento2" onchange="tipoVencimento2()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-<<<<<<< HEAD
-            <div id="divNDias2" class="input-field row">
+            <div name="divNDias2" class="input-field row">
                 <input name="nDias2" type="number">
                 <label for="nDias2">n Dias</label>
             </div>
-            <div id="divVenc2" class="input-field row">
-=======
-            <div name="divNDias2" id="divNDias2" class="input-field row">
-                <input name="nDias2" type="number">
-                <label for="nDias2">n Dias</label>
-            </div>
-            <div name="divVenc2" id="divVenc2" class="input-field row">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
+            <div name="divVenc2" class="input-field row">
                 <input name="vencimentoLote2" type="text" class="datepicker">
                 <label name="labelVenc2" for="vencimentoLote2">Limite de vencimento</label>
             </div>
@@ -413,25 +400,17 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento3" id="selectVencimento3" onchange="tipoVencimento3()">
+                <select name="selectVencimento3" onchange="tipoVencimento3()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-<<<<<<< HEAD
-            <div id="divNDias3" class="input-field row">
+            <div name="divNDias3" class="input-field row">
                 <input name="nDias3" type="number">
                 <label for="nDias3">n Dias</label>
             </div>
-            <div id="divVenc3" class="input-field row">
-=======
-            <div name="divNDias3" id="divNDias3" class="input-field row">
-                <input name="nDias3" type="number">
-                <label for="nDias3">n Dias</label>
-            </div>
-            <div name="divVenc3" id="divVenc3" class="input-field row">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
+            <div name="divVenc3" class="input-field row">
                 <input name="vencimentoLote3" type="text" class="datepicker">
                 <label name="labelVenc3" for="vencimentoLote3">Limite de vencimento</label>
             </div>
@@ -471,201 +450,209 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento4" id="selectVencimento4" onchange="tipoVencimento4()">
+                <select name="selectVencimento4" onchange="tipoVencimento4()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-<<<<<<< HEAD
-            <div id="divNDias4" class="input-field row">
+            <div name="divNDias4" class="input-field row">
                 <input name="nDias4" type="number">
                 <label for="nDias4">n Dias</label>
             </div>
-            <div id="divVenc4" class="input-field row">
-=======
-            <div name="divNDias4" id="divNDias4" class="input-field row">
-                <input name="nDias4" type="number">
-                <label for="nDias4">n Dias</label>
-            </div>
-            <div name="divVenc4" id="divVenc4" class="input-field row">
->>>>>>> 90522e0c2404a2f0022bf32d49f9bbc263f8efdd
+            <div name="divVenc4" class="input-field row">
                 <input name="vencimentoLote4" type="text" class="datepicker">
                 <label name="labelVenc4" for="vencimentoLote4">Limite de vencimento</label>
             </div>
         </div>
         <div class="input-field col s12 center">
-        	<button type='submit' name='btnCriarCurso' class='btn waves-effect waves-light' style='border-radius: 12px;'>Enviar<i class="material-icons right">send</i></button>
+            <button class="btn waves-effect waves-light" type="submit" style='padding: 20px 80px; border-radius: 12px; line-height: 8px;' name="btnCriarCurso">Enviar
+                <i class="material-icons right">send</i>
+              </button>
         </div>
     </form>
   </div>
 
   <div class="row">
-      <div class="col s12 m6">
-          <div class="card grey lighten-3">
-              <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                  <p>
-                    <label>
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s2"><a class="active" href="#tab1">não Sócio</a></li>
+                <li class="tab col s2"><a href="#tab2">Sócio ABCDI</a></li>
+                <li class="tab col s2"><a href="#tab3">Sócio CBR</a></li>
+                <li class="tab col s3"><a href="#tab4">Sócio Não quite</a></li>
+                <li class="tab col s3"><a href="#tab5">Sócio Parceiros</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="col s12 m12">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card grey lighten-3">
+                    <div class="card-content">
+                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
+                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
+                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                      <p>
+                      <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorNaoSocioExemplo">R$ </span>
-                    </label>
-                </p>
-              </div>
-              <div class="card-action">
-                <p class="red-text">Não Sócio</p>
+                        <span class="black-text" id="valorNaoSocioExemplo">R$ 2854,00</span>
+                      </label>
+                    </p>
+                    </div>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
-      <div class="col s12 m6">
-          <div class="card grey lighten-3">
-              <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                  <p>
-                    <label>
+            <div class="row">
+                <div class="col s12 m6 boleto">
+                    <img src="img/boleto.jpg" style="width:100%;">
+                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
+                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
+                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
+                </div>
+            </div>
+        </div>
+        <div id="tab2" class="col s12 m12">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card grey lighten-3">
+                    <div class="card-content">
+                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
+                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
+                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                      <p>
+                      <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorCBRExemplo">R$ </span>
-                    </label>
-                </p>
-              </div>
-              <div class="card-action">
-                <p class="red-text">Sócio CBR</p>
+                        <span class="black-text" id="valorABCDIExemplo">R$ 2854,00</span>
+                      </label>
+                    </p>
+                    </div>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
-      <div class="col s12 m6">
-          <div class="card grey lighten-3">
-              <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                  <p>
-                    <label>
+            <div class="row">
+                <div class="col s12 m6 boleto">
+                    <img src="img/boleto.jpg" style="width:100%;">
+                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
+                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
+                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
+                </div>
+            </div>
+        </div>
+        <div id="tab3" class="col s12 m12">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card grey lighten-3">
+                    <div class="card-content">
+                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
+                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
+                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                      <p>
+                      <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorABCDIExemplo">R$ </span>
-                    </label>
-                </p>
-              </div>
-              <div class="card-action">
-                <p class="red-text">Sócio ABCDI</p>
+                        <span class="black-text" id="valorCBRExemplo">R$ 2854,00</span>
+                      </label>
+                    </p>
+                    </div>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
-      <div class="col s12 m6">
-          <div class="card grey lighten-3">
-              <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                  <p>
-                    <label>
+            <div class="row">
+                <div class="col s12 m6 boleto">
+                    <img src="img/boleto.jpg" style="width:100%;">
+                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
+                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
+                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
+                </div>
+            </div>
+        </div>
+        <div id="tab4" class="col s12 m12">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card grey lighten-3">
+                    <div class="card-content">
+                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
+                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
+                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                      <p>
+                      <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorNaoQuiteExemplo">R$ </span>
-                    </label>
-                </p>
-              </div>
-              <div class="card-action">
-                <p class="red-text">Sócio Não Quite</p>
+                        <span class="black-text" id="valorNaoQuiteExemplo">R$ 2854,00</span>
+                      </label>
+                    </p>
+                    </div>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
-      <div class="col s12 m6">
-          <div class="card grey lighten-3">
-              <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
-                  <p>
-                    <label>
+            <div class="row">
+                <div class="col s12 m6 boleto">
+                    <img src="img/boleto.jpg" style="width:100%;">
+                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
+                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
+                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
+                </div>
+            </div>
+        </div>
+        <div id="tab5" class="col s12 m12">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card grey lighten-3">
+                    <div class="card-content">
+                      <span class="card-text tituloCursoExemplo">CURSO DE GESTÃO DE CLÍNICAS - EFETIVIDADE DA RELAÇÃO COMERCIAL COM AS OPERADORAS</span><br><br>
+                      <p><b>Data da realização: </b><p class="dataInicialCursoExemplo">28/06/2018</p> - <p class="dataFinalCursoExemplo">29/06/2018</p></p><br>
+                      <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                      <p>
+                      <label>
                         <input class="with-gap" name="group1" type="radio"  />
-                        <span class="black-text" id="valorParceirosExemplo">R$ </span>
-                    </label>
-                </p>
-              </div>
-              <div class="card-action">
-                <p class="red-text">Sócio Entidade Parceira</p>
+                        <span class="black-text" id="valorParceirosExemplo">R$ 2854,00</span>
+                      </label>
+                    </p>
+                    </div>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
-  </div>
+            <div class="row">
+                <div class="col s12 m6 boleto">
+                    <img src="img/boleto.jpg" style="width:100%;">
+                    <div class="boletoNumero"><p style="font-family: Times New Roman">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
+                    <div class="boletoVencimento"><p style="font-family: Times New Roman"><b>xx/xx/20xx</b></p></div>
+                    <div class="boletoValor"><p style="font-family: Times New Roman"><b>2850,00</b></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
   <!-- Modal Structure -->
   <div id="modalSalvos" class="modal bottom-sheet">
-    <div class="modal-content container">
-        <table>
-            <tr>
-                <th>Cursos enviados</th>
-                <th>Criado no iCase</th>
-            </tr>
+    <div class="modal-content">
+        <h4>Cursos salvos</h4>
         <?php
             $db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
-            $query = "SELECT id, nome, criado_no_icase FROM tb_criar_cursos";
+            $query = "SELECT id, nome FROM tb_criar_cursos";
             $result = mysqli_query($db, $query);
             while ($curso = mysqli_fetch_assoc($result)){
-                echo "<tr>";
-                echo "<td>";
-                echo "<a href='index.php?curso=".$curso['id']."' class='waves-effect waves-light btn-small' value='".$curso['id']."'>";
+                echo "<a href='index.php?curso=".$curso['id']."' class='waves-effect waves-light btn-small green' value='".$curso['id']."'>";
                 echo $curso['nome'];
                 echo "</a>";
-                echo "</td>";
-                echo "<td>";
-                if ($curso['criado_no_icase'] == 0) echo '<a class="btn-floating waves-effect waves-light red"><i class="material-icons">clear</i></a>';
-                else echo '<a class="btn-floating waves-effect waves-light green"><i class="material-icons">done</i></a>';
-                echo "</td>";
+                echo "<br>";
+                echo "<br>";
             }
         ?>
-        </table>
-    </div>
-  </div>
-
-   <!-- Modal Structure -->
-  <div id="modalLoad" name="modalLoad" class="modal" style="width:300px; height: 250px;">
-    <div class="modal-content">
-    	<h4 class="center">Enviando...</h4>
-    	<div class="cssload-loader-inner">
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-		</div>
     </div>
   </div>
 
 <!-- JQuery -->
-<script src="js\jquery-3.3.1.slim.min.js"></script>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
 
 <!-- Compiled and minified JavaScript -->
-<script src="js\materialize.min.js"></script>
+<script src="js/materialize.min.js"></script>
 
 <!-- Ativar contador de texto, tooltips, selects
 Datepickers, Timepickers e funções para mostrar janelas de pagamento
 e Tipo do vencimento -->
-<script src="js\funcoes.js"></script>
+<script src="js/funcoes.js"></script>
 
 
 <script>
-
-	function abrirModalLoad()
-	{
-		$('#modalLoad').modal('open');
-	}
-
     function trocarTitulo(){
         var i;
 

@@ -1,26 +1,12 @@
 $('div.checkbox-group.required :checkbox:checked').length > 0;
 
-$(document).ready(function() {
-    $('.contar').characterCounter();
-});
-$(document).ready(function(){
-    $('.tooltipped').tooltip();
-});
-$(document).ready(function(){
-    $('select').formSelect();
-});
-$(document).ready(function(){
-    $('.datepicker').datepicker();
-});
-$(document).ready(function(){
-    $('.timepicker').timepicker();
-});
-$(document).ready(function(){
-    $('.tabs').tabs();
-});
-$(document).ready(function(){
-    $('.modal').modal();
-});
+$(document).ready(function() { $('.contar').characterCounter(); });
+$(document).ready(function() { $('.tooltipped').tooltip(); });
+$(document).ready(function() { $('select').formSelect(); });
+$(document).ready(function() { $('.datepicker').datepicker(); });
+$(document).ready(function() { $('.timepicker').timepicker(); });
+$(document).ready(function() { $('.tabs').tabs(); });
+$(document).ready(function() { $('.modal').modal(); });
 
 function janelasPgto(){
     var janelas = document.getElementById('selectJanelas').value;

@@ -44,8 +44,7 @@
 		`presenca`, `etiqueta`, `data_inicio_curso`,
 		`data_fim_curso`, `hora_inicio_curso`, `hora_fim_curso`,
 		`data_inicio_inscricoes`, `data_fim_inscricoes`, `vagas`,
-		`carga_horaria`, `categorias`, `janelas_pagamento`,
-		`data_inicio_lote1`,
+		`carga_horaria`, `categorias`,`data_inicio_lote1`,
 		`data_fim_lote1`, `valor_lote1`, `valor_cbr_lote1`,
 		`valor_abcdi_lote1`, `valor_nao_quite_lote1`, `valor_parceiro_lote1`,
 		`tipo_vencimento_lote1`, `n_dias_lote1`, `limite_vencimento_lote1`,
@@ -76,7 +75,6 @@
 		'".$_POST['vagas']."',
 		'".$_POST['cargaHoraria']."',
 		'".$categorias."',
-		'".$_POST['selectJanelas']."',
 		'".$dataInicialLote1."',
 		'".$dataFinalLote1."',
 		'".$_POST['valor1']."',
@@ -121,17 +119,8 @@
 		'$criadoPor')";
 
 		echo $query;
-		require_once('mailer.php');
 
 		mysqli_query($db, $query) or die ('Erro: '.mysqli_error($db));
-
-		$to = "knucles0906@live.com";
-		$subject = "My subject";
-		$txt = "Hello world!";
-		$headers = "From: knucles0906@live.com" . "\r\n" .
-		"CC: somebodyelse@example.com";
-
-		mail($to,$subject,$txt,$headers);
-
 		header('location: index.php');
 	}
+?>
