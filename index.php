@@ -22,7 +22,7 @@
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo" style="font-size: 20px;">Criar Curso</a>
       <ul id="nav-mobile" class="right">
-        <li><a class="waves-effect waves-light btn modal-trigger" href="#modalSalvos">Cursos Salvos</a></li>
+        <li><a class="waves-effect waves-light btn modal-trigger" href="#modalSalvos">Cursos Enviados</a></li>
       </ul>
     </div>
   </nav>
@@ -569,20 +569,30 @@
 
   <!-- Modal Structure -->
   <div id="modalSalvos" class="modal bottom-sheet">
-    <div class="modal-content">
-        <h4>Cursos salvos</h4>
+    <div class="modal-content container">
+        <table>
+            <tr>
+                <th>Cursos enviados</th>
+                <th>Criado no iCase</th>
+            </tr>
         <?php
             $db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
-            $query = "SELECT id, nome FROM tb_criar_cursos";
+            $query = "SELECT id, nome, criado_no_icase FROM tb_criar_cursos";
             $result = mysqli_query($db, $query);
             while ($curso = mysqli_fetch_assoc($result)){
-                echo "<a href='index.php?curso=".$curso['id']."' class='waves-effect waves-light btn-small green' value='".$curso['id']."'>";
+                echo "<tr>";
+                echo "<td>";
+                echo "<a href='index.php?curso=".$curso['id']."' class='waves-effect waves-light btn-small' value='".$curso['id']."'>";
                 echo $curso['nome'];
                 echo "</a>";
-                echo "<br>";
-                echo "<br>";
+                echo "</td>";
+                echo "<td>";
+                if ($curso['criado_no_icase'] == 0) echo '<a class="btn-floating waves-effect waves-light red"><i class="material-icons">clear</i></a>';
+                else echo '<a class="btn-floating waves-effect waves-light green"><i class="material-icons">done</i></a>';
+                echo "</td>";
             }
         ?>
+        </table>
     </div>
   </div>
 
