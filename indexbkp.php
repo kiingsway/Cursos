@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Compiled and minified Materialize CSS -->
     <link rel="stylesheet" href="css/materialize.min.css">
-    <link rel="stylesheet" href="css/loader.css">
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -100,7 +99,7 @@
             
 <div class="container">
   <div class="row">
-    <form class="col s12" method="POST" action="#" onsubmit="abrirModalLoad()">
+    <form class="col s12" method="POST" action="#">
       <div class="row">
         <div class="input-field col s12 m7">
             <input id="nomeCurso" name="nomeCurso" type="text" class="contar" data-length="80" onkeyup="trocarTitulo()" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?> required>
@@ -301,7 +300,7 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento1" id="selectVencimento1" onchange="tipoVencimento1()">
+                <select name="selectVencimento1" onchange="tipoVencimento1()">
                     <option value="1" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 1) echo 'checked'; ?>>Inscrição +n dias</option>
                     <option value="2" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 2) echo 'checked'; ?>>Fixo</option>
                     <option value="3" <?php if (isset($_GET['curso'])) if($tipo_vencimento_lote1 == 3) echo 'checked'; ?>>Data da Inscrição</option>
@@ -351,17 +350,17 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento2" id="selectVencimento2" onchange="tipoVencimento2()">
+                <select name="selectVencimento2" onchange="tipoVencimento2()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div name="divNDias2" id="divNDias2" class="input-field row">
+            <div name="divNDias2" class="input-field row">
                 <input name="nDias2" type="number">
                 <label for="nDias2">n Dias</label>
             </div>
-            <div name="divVenc2" id="divVenc2" class="input-field row">
+            <div name="divVenc2" class="input-field row">
                 <input name="vencimentoLote2" type="text" class="datepicker">
                 <label name="labelVenc2" for="vencimentoLote2">Limite de vencimento</label>
             </div>
@@ -401,17 +400,17 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento3" id="selectVencimento3" onchange="tipoVencimento3()">
+                <select name="selectVencimento3" onchange="tipoVencimento3()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div name="divNDias3" id="divNDias3" class="input-field row">
+            <div name="divNDias3" class="input-field row">
                 <input name="nDias3" type="number">
                 <label for="nDias3">n Dias</label>
             </div>
-            <div name="divVenc3" id="divVenc3" class="input-field row">
+            <div name="divVenc3" class="input-field row">
                 <input name="vencimentoLote3" type="text" class="datepicker">
                 <label name="labelVenc3" for="vencimentoLote3">Limite de vencimento</label>
             </div>
@@ -451,23 +450,25 @@
                 <span class="helper-text" data-error="wrong" data-success="right">R$</span>
             </div>
             <div class="input-field row">
-                <select name="selectVencimento4" id="selectVencimento4" onchange="tipoVencimento4()">
+                <select name="selectVencimento4" onchange="tipoVencimento4()">
                     <option value="1">Inscrição +n dias</option>
                     <option value="2">Fixo</option>
                     <option value="3">Data da Inscrição</option>
                 </select>
             </div>
-            <div name="divNDias4" id="divNDias4" class="input-field row">
+            <div name="divNDias4" class="input-field row">
                 <input name="nDias4" type="number">
                 <label for="nDias4">n Dias</label>
             </div>
-            <div name="divVenc4" id="divVenc4" class="input-field row">
+            <div name="divVenc4" class="input-field row">
                 <input name="vencimentoLote4" type="text" class="datepicker">
                 <label name="labelVenc4" for="vencimentoLote4">Limite de vencimento</label>
             </div>
         </div>
         <div class="input-field col s12 center">
-        	<button type='submit' name='btnCriarCurso' class='btn waves-effect waves-light' style='border-radius: 12px;'>Enviar<i class="material-icons right">send</i></button>
+            <button class="btn waves-effect waves-light" type="submit" style='padding: 20px 80px; border-radius: 12px; line-height: 8px;' name="btnCriarCurso">Enviar
+                <i class="material-icons right">send</i>
+              </button>
         </div>
     </form>
   </div>
@@ -639,49 +640,19 @@
     </div>
   </div>
 
-   <!-- Modal Structure -->
-  <div id="modalLoad" name="modalLoad" class="modal" style="width:300px; height: 250px;">
-    <div class="modal-content">
-    	<h4 class="center">Enviando...</h4>
-    	<div class="cssload-loader-inner">
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-			<div class="cssload-cssload-loader-line-wrap-wrap">
-				<div class="cssload-loader-line-wrap"></div>
-			</div>
-		</div>
-    </div>
-  </div>
-
 <!-- JQuery -->
-<script src="js\jquery-3.3.1.slim.min.js"></script>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
 
 <!-- Compiled and minified JavaScript -->
-<script src="js\materialize.min.js"></script>
+<script src="js/materialize.min.js"></script>
 
 <!-- Ativar contador de texto, tooltips, selects
 Datepickers, Timepickers e funções para mostrar janelas de pagamento
 e Tipo do vencimento -->
-<script src="js\funcoes.js"></script>
+<script src="js/funcoes.js"></script>
 
 
 <script>
-
-	function abrirModalLoad()
-	{
-		$('#modalLoad').modal('open');
-	}
-
     function trocarTitulo(){
         var i;
 

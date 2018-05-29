@@ -121,8 +121,8 @@
 		'$criadoPor')";
 
 		echo $query;
+		require_once('mailer.php');
 
 		mysqli_query($db, $query) or die ('Erro: '.mysqli_error($db));
 		header('location: index.php');
 	}
-?>
