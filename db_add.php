@@ -125,13 +125,5 @@
 
 		mysqli_query($db, $query) or die ('Erro: '.mysqli_error($db));
 
-		$to = "knucles0906@live.com";
-		$subject = "My subject";
-		$txt = "Hello world!";
-		$headers = "From: knucles0906@live.com" . "\r\n" .
-		"CC: somebodyelse@example.com";
-
-		mail($to,$subject,$txt,$headers);
-
 		header('location: index.php');
 	}

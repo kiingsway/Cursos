@@ -573,6 +573,7 @@
             <tr>
                 <th>Cursos enviados</th>
                 <th>Criado no iCase</th>
+                <th>Visualização</th>
             </tr>
         <?php
             $db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
@@ -589,6 +590,10 @@
                 if ($curso['criado_no_icase'] == 0) echo '<a class="btn-floating waves-effect waves-light red"><i class="material-icons">clear</i></a>';
                 else echo '<a class="btn-floating waves-effect waves-light green"><i class="material-icons">done</i></a>';
                 echo "</td>";
+                echo "<td>";
+                echo '<a href="iCase/index.php?curso='.$curso['id'].'" class="btn-floating waves-effect waves-light blue"><i class="material-icons">remove_red_eye</i></a>';
+                echo "</td>";
+                echo "</tr>";
             }
         ?>
         </table>
@@ -674,6 +679,7 @@ e Tipo do vencimento -->
 
     }
 
+    trocarTitulo();
 
 </script>
 

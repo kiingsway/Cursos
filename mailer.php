@@ -15,8 +15,8 @@ try{
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.office365.com';                   // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = $meuEmail;                 // SMTP username
-    $mail->Password = $minhaSenha;                          // SMTP password
+    $mail->Username = $meuEmail;                          // SMTP username
+    $mail->Password = $minhaSenha;                        // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
@@ -27,8 +27,9 @@ try{
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Curso ' . $_POST['nomeCurso'] . ' enviado';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Body    = 'Um curso foi enviado a partir do computador <i>'.$criadoPor.'</i>.<br>
+    O inicio das inscricoes eh dia '.$_POST['InscricoesInicio'].'.';
+    $mail->AltBody = 'Um curso foi enviado a partir do computador '.$criadoPor.'. O início das inscrições é dia '.$InscricoesInicio.'.';
 
     $mail->send();
     echo 'Message has been sent';
