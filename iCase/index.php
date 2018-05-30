@@ -134,34 +134,34 @@
 			<hr>
 			<div class="row">
     			<div class="col">
-					<label for="atvDescricao">Descrição:</label>
-					<input type="text" class="form-control" id="atvDescricao" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
+    				<label for="atvDescricao">Descrição:</label>
+					<input type="text" class="form-control" id="atvDescricao" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
 				</div>
     			<div class="col">
-					<label for="atvDescricaoCertificado">Descrição do certificado:</label>
-					<input type="text" class="form-control" id="atvDescricaoCertificado" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
+    				<label for="atvDescricaoCertificado">Descrição do certificado:</label>
+					<input type="text" class="form-control" id="atvDescricaoCertificado" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
 				</div>
     			<div class="col-2">
-					<label for="atvCentroCusto"><b>C. Custo</b></label>
-					<input type="text" class="form-control" id="atvCentroCusto" <?php if (isset($_GET['curso'])) echo "value='".$centro_custo."'"; ?>>
+    				<label for="atvCentroCusto"><b>C. Custo</b></label>
+					<input type="text" class="form-control" id="atvCentroCusto" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$centro_custo."'"; ?>>
 				</div>
     			<div class="col">
 					<label for="atvDescricaoCentroCusto">Descrição</label>
-					<input type="text" class="form-control" id="atvDescricaoCentroCusto" <?php if (isset($_GET['curso'])) echo "value='".$centro_custoDetalhes."'"; ?>>
+					<input type="text" class="form-control" id="atvDescricaoCentroCusto" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$centro_custoDetalhes."'"; ?>>
 				</div>
 			</div>
 			<div class="row">
     			<div class="col-2">
 					<label for="atvContaCaixa"><b>C. caixa</b></label>
-					<input type="text" class="form-control" id="atvContaCaixa" <?php if (isset($_GET['curso'])) echo "value='".$conta_caixa."'"; ?>>
+					<input type="text" class="form-control" id="atvContaCaixa" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$conta_caixa."'"; ?>>
 				</div>
     			<div class="col">
 					<label for="atvDescricaoContaCaixa">Descrição:</label>
-					<input type="text" class="form-control" id="atvDescricaoContaCaixa" <?php if (isset($_GET['curso'])) echo "value='".$conta_caixaDetalhes."'"; ?>>
+					<input type="text" class="form-control" id="atvDescricaoContaCaixa" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$conta_caixaDetalhes."'"; ?>>
 				</div>
     			<div class="col">
 					<label for="atvTipoAtividade"><b>Tipo de atividade:</b></label>
-					<input type="text" class="form-control" id="atvTipoAtividade" <?php if (isset($_GET['curso'])) echo "value='".$tipo_atividadeDetalhes."'"; ?>>
+					<input type="text" class="form-control" id="atvTipoAtividade" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$tipo_atividadeDetalhes."'"; ?>>
 				</div>
     			<div class="col">
 					<label>Eixo:</label>
@@ -191,7 +191,7 @@
 			<div class="row">
     			<div class="col-6">
 					<label for="agdAtividade"><b>Atividade:</b></label>
-					<input type="text" class="form-control" id="agdAtividade" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
+					<input type="text" class="form-control" id="agdAtividade" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
 				</div>
     			<div class="col-2">
 					<label for="agdSigla">Sigla</label>
@@ -199,7 +199,7 @@
 				</div>
     			<div class="col-4">
 					<label for="agdDescricao">Descrição</label>
-					<input type="text" class="form-control" id="agdDescricao" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
+					<input type="text" class="form-control" id="agdDescricao" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
 				</div>
 			</div><br>
 			<div class="container" style="background-color: #ccc; margin: auto; border-radius: 4px;"><br>
@@ -208,19 +208,19 @@
 				<div class="row">
 					<div class="col">
 						<label for="agdInicio"><b>Início</b></label>
-						<input type="text" class="form-control" id="agdInicio"  <?php if (isset($_GET['curso'])) echo "value='".$data_inicio_curso."'"; ?>>
+						<input type="text" class="form-control" id="agdInicio" data-toggle="tooltip" data-placement="top" title="Clique para copiar"  <?php if (isset($_GET['curso'])) echo "value='".$data_inicio_curso."'"; ?>>
 					</div>
 					<div class="col">
 						<label for="agdHoraInicio">Hora Inicial</label>
-						<input type="text" class="form-control" id="agdHoraInicio"  <?php if (isset($_GET['curso'])) echo "value='".$hora_inicio_curso."'"; ?>>
+						<input type="text" class="form-control" id="agdHoraInicio" data-toggle="tooltip" data-placement="top" title="Clique para copiar"  <?php if (isset($_GET['curso'])) echo "value='".$hora_inicio_curso."'"; ?>>
 					</div>
 					<div class="col">
 						<label for="agdTermino"><b>Termino</b></label>
-						<input type="text" class="form-control" id="agdTermino"  <?php if (isset($_GET['curso'])) echo "value='".$data_fim_curso."'"; ?>>
+						<input type="text" class="form-control" id="agdTermino" data-toggle="tooltip" data-placement="top" title="Clique para copiar"  <?php if (isset($_GET['curso'])) echo "value='".$data_fim_curso."'"; ?>>
 					</div>
 					<div class="col">
 						<label for="agdHoraFinal">Hora Final</label>
-						<input type="text" class="form-control" id="agdHoraFinal"  <?php if (isset($_GET['curso'])) echo "value='".$hora_fim_curso."'"; ?>>
+						<input type="text" class="form-control" id="agdHoraFinal" data-toggle="tooltip" data-placement="top" title="Clique para copiar"  <?php if (isset($_GET['curso'])) echo "value='".$hora_fim_curso."'"; ?>>
 					</div>
 					<div class="col">
 						<label>Modelo certificado</label>
@@ -235,15 +235,15 @@
 				<div class="row">
 					<div class="col-2">
 						<label for="agdInscricoesInicio"><b>Início</b></label>
-						<input type="text" class="form-control" id="agdInscricoesInicio"  <?php if (isset($_GET['curso'])) echo "value='".$data_inicio_inscricoes."'"; ?>>
+						<input type="text" class="form-control" id="agdInscricoesInicio" data-toggle="tooltip" data-placement="top" title="Clique para copiar"  <?php if (isset($_GET['curso'])) echo "value='".$data_inicio_inscricoes."'"; ?>>
 					</div>
 					<div class="col-2">
 						<label for="agdInscricoesTermino"><b>Termino</b></label>
-						<input type="text" class="form-control" id="agdInscricoesTermino"  <?php if (isset($_GET['curso'])) echo "value='".$data_fim_inscricoes."'"; ?>>
+						<input type="text" class="form-control" id="agdInscricoesTermino" data-toggle="tooltip" data-placement="top" title="Clique para copiar"  <?php if (isset($_GET['curso'])) echo "value='".$data_fim_inscricoes."'"; ?>>
 					</div>
 					<div class="col-2">
 						<label for="agdVagas"><b>Num. de vagas</b></label>
-						<input type="text" class="form-control" id="agdVagas"  <?php if (isset($_GET['curso'])) echo "value='".$vagas."'"; ?>>
+						<input type="text" class="form-control" id="agdVagas" data-toggle="tooltip" data-placement="top" title="Clique para copiar"  <?php if (isset($_GET['curso'])) echo "value='".$vagas."'"; ?>>
 					</div>
 					<div class="col-2">
 						<label>Vagas ocupadas</label>
@@ -263,7 +263,7 @@
 				<div class="row">
 					<div class="col-2">
 						<label for="agdCargaHoraria">Carga horária</label>
-						<input type="text" class="form-control" id="agdCargaHoraria"  <?php if (isset($_GET['curso'])) echo "value='".$carga_horaria."'"; ?>>
+						<input type="text" class="form-control" id="agdCargaHoraria" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$carga_horaria."'"; ?>>
 					</div>
 				</div><br>
 			</div>
@@ -296,7 +296,7 @@
 				<div class="row">
 					<div class="col-2">
 						<label>Controle layout</label>
-						<input type="text" class="form-control" value="14" disabled>
+						<input type="text" class="form-control" value="14" data-toggle="tooltip" data-placement="top" title="Clique para copiar">
 					</div>
 					<div class="col-2">
 						<label>Layout</label>
@@ -310,11 +310,54 @@
 			</div>
 			<br>
 		</div>
+		<br><br><br>
+		<div style="background-color: #f3f3f4;" class="container">
+			<h5><i class="fa fa-check-square-o"></i> Editar plano de pagamento</h5>
+			<hr>
+			<div class="row">
+				<div class="col-2">
+					<label><b>Atividade</b></label>
+					<input type="text" class="form-control" disabled>
+				</div>
+				<div class="col-4">
+					<label>...</label>
+					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?>>
+				</div>
+				<div class="col-2">
+					<label>Somente Sócio</label>
+					<input type="text" class="form-control" value="Não" disabled>
+				</div>
+				<div class="col-2">
+					<label>Data de início</label>
+					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$data_inicio_lote1."'"; ?>>
+				</div>
+				<div class="col-2">
+					<label>Data de término</label>
+					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$data_fim_lote1."'"; ?>>
+				</div>
+			</div>
+		</div>
+
+
 	</div>
 	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script>
+		$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		});
+
+		$(function() {
+			$('input').click(function() {
+			$(this).focus();
+			$(this).select();
+			document.execCommand('copy');
+			});
+		});
+
+	</script>
 </body>
 </html>
