@@ -323,7 +323,8 @@
 			</div>
 			<br>
 		</div>
-		<br><br><br>
+		<br><br>
+		<h2>Lote 1</h2>
 		<div style="background-color: #f3f3f4;" class="container">
 			<h5><i class="fa fa-check-square-o"></i> Editar plano de pagamento</h5>
 			<hr>
