@@ -41,7 +41,8 @@
             $valor_abcdi_lote1 = $cursodb['valor_abcdi_lote1'];
             $valor_nao_quite_lote1 = $cursodb['valor_nao_quite_lote1'];
             $valor_parceiro_lote1 = $cursodb['valor_parceiro_lote1'];
-            $tipo_vencimento_lote1 = $cursodb['tipo_vencimento_lote1']; 
+            $tipo_vencimento_lote1 = $cursodb['tipo_vencimento_lote1'];
+            $tipo_vencimento_lote1Detalhes;
             $n_dias_lote1 = $cursodb['n_dias_lote1'];
             $limite_vencimento_lote1 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote1'])));
             $data_inicio_lote2 = $cursodb['data_inicio_lote2'];
@@ -120,6 +121,18 @@
             		break;
             	case '3':
             		$tipo_atividadeDetalhes = "Livros";
+            		break;
+            }
+
+            switch ($tipo_vencimento_lote1) {
+            	case '1':
+            		$tipo_vencimento_lote1Detalhes = "Data da Inscrição + n dias";
+            		break;
+            	case '2':
+            		$tipo_vencimento_lote1Detalhes = "Vencimento fixo";
+            		break;
+            	case '3':
+            		$tipo_vencimento_lote1Detalhes = "Data da Inscrição + n dias";
             		break;
             }
         }
@@ -336,6 +349,146 @@
 					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$data_fim_lote1."'"; ?>>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col">
+					<label><b>Categoria(s)</b></label>
+					<input type="text" class="form-control" placeholder="Selecione suas opções">
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col">
+					<label>Instrução Boleto</label>
+					<textarea class="form-control"><?php if (isset($_GET['curso'])) echo $nome; ?></textarea>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col">
+					<label>Instrução Arquivo Remessa</label>
+					<textarea class="form-control" disabled></textarea>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col">
+					<label>Convênio</label>
+					<select class="custom-select" disabled><option>Selecione</option></select>
+				</div>
+				<div class="col">
+					<label>Cortesia</label>
+					<select class="custom-select" disabled><option>Não</option></select>
+				</div>
+				<div class="col">
+					<label>Disp. na internet</label>
+					<select class="custom-select"><option>Sim</option></select>
+				</div>
+				<div class="col">
+					<label>Forma de cobrança</label>
+					<select class="custom-select" disabled><option>Não se aplica</option></select>
+				</div>
+				<div class="col">
+					<label>Inscrições em grupos</label>
+					<select class="custom-select" disabled><option>Não</option></select>
+				</div>
+			</div><br>
+			<div class="container" style="background-color: #ccc; margin: auto; border-radius: 4px;"><br>
+				<h6>Matrícula</h6>
+				<hr style="background-color: white;">
+				<div class="row">
+					<div class="col-2">
+						<label>Existe Matrícula?</label>
+						<select class="custom-select" disabled><option>Não</option></select>
+					</div>
+					<div class="col-2">
+						<label>Valor</label>
+						<input type="text" class="form-control" disabled>
+					</div>
+					<div class="col-2">
+						<label>Valor sócio</label>
+						<input type="text" class="form-control" disabled>
+					</div>
+					<div class="col-2">
+						<label>Valor não quite</label>
+						<input type="text" class="form-control" disabled>
+					</div>
+					<div class="col">
+						<label>Valor parceiro</label>
+						<input type="text" class="form-control" disabled>
+					</div>
+					<div class="col">
+						<label>Vencimento</label>
+						<input type="text" class="form-control" disabled>
+					</div>
+				</div><br>
+			</div><br>
+			<div class="container" style="background-color: #ccc; margin: auto; border-radius: 4px;"><br>
+				<h6>Parcelas</h6>
+				<hr style="background-color: white;">
+				<div class="row">
+					<div class="col-2">
+						<label><b>Quantidade</b></label>
+						<input type="text" class="form-control" value="1" disabled>
+					</div>
+					<div class="col-2">
+						<label><b>Valor</b></label>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_lote1.",00'"; ?>>
+					</div>
+					<div class="col-2">
+						<label><b>Valor sócio</b></label>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_cbr_lote1.",00'"; ?>>
+					</div>
+					<div class="col-2">
+						<label><b>Valor não quite</b></label>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_nao_quite_lote1.",00'"; ?>>
+					</div>
+					<div class="col">
+						<label><b>Valor parceiro</b></label>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_parceiro_lote1.",00'"; ?>>
+					</div>
+					<div class="col">
+						<label><b>Vencimento</b></label>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='".$limite_vencimento_lote1."'"; ?>>
+					</div>
+				</div><br>
+			</div><br>
+			<div class="row container">
+			<div class="col" style="background-color: #ccc; border-radius: 4px;"><br>
+				<h6>Tipo de vencimento</h6>
+				<hr style="background-color: white;">
+				<div class="row">
+					<div class="col-6">
+						<label>Tipo de vencimento da parcela</label>
+						<select class="custom-select"><option><?php if (isset($_GET['curso'])) echo $tipo_vencimento_lote1Detalhes; ?></option></select>
+					</div>
+					<div class="col-2">
+						<label><b>Dias:</b></label>
+						<input type="text" class="form-control" <?php switch ($tipo_vencimento_lote1) {case '1': echo "value='".$n_dias_lote1."'"; break; case '2': echo "value=''"; break;case '3': echo "value='0'"; break;} ?>>
+					</div>
+				</div><br>
+			</div>
+			<div class="col" style="background-color: #ccc; border-radius: 4px;"><br>
+				<h6>Desconto</h6>
+				<hr style="background-color: white;">
+				<div class="row">
+					<div class="col-3">
+						<label><b>Desconto de</b></label>
+						<input type="text" class="form-control" value="R$ 0,00">
+					</div>
+					<div class="col-4">
+						<label>Se pagamento</label>
+						<input type="text" class="form-control">
+					</div>
+				</div><br>
+			</div>
+			</div><br>
+			<div class="container" style="background-color: #ccc; margin: auto; border-radius: 4px;"><br>
+				<h6>Atualização de vencimento</h6>
+				<hr style="background-color: white;">
+				<div class="row">
+					<div class="col-6">
+						<label><b>Permitir atualizar a data de vencimento?</b></label>
+						<select class="custom-select" disabled><option>Não</option></select>
+					</div>
+				</div><br>
+			</div><br>
 		</div>
 
 
@@ -352,6 +505,11 @@
 
 		$(function() {
 			$('input').click(function() {
+			$(this).focus();
+			$(this).select();
+			document.execCommand('copy');
+			});
+			$('textarea').click(function() {
 			$(this).focus();
 			$(this).select();
 			document.execCommand('copy');
