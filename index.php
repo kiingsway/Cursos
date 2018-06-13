@@ -26,7 +26,7 @@
         <li><a class="waves-effect waves-light btn modal-trigger" href="#modalSalvos">Cursos Enviados</a></li>
       </ul>
     </div>
-  </nav>
+  </nav><br>
 <!--Main Navigation-->
 
 <?php
@@ -470,7 +470,7 @@
         	<button type='submit' name='btnCriarCurso' class='btn waves-effect waves-light' style='border-radius: 12px;'>Enviar<i class="material-icons right">send</i></button>
         </div>
     </form>
-  </div>
+  </div>  
 
   <div class="row">
       <div class="col s12 m6">
@@ -563,11 +563,12 @@
             </div>
           </div>
       </div>
-      
-
-
   </div>
-</div>
+
+
+
+
+</div> <!-- Fim Container-->
 
   <!-- Modal Structure -->
   <div id="modalSalvos" class="modal bottom-sheet">
@@ -640,6 +641,9 @@ e Tipo do vencimento -->
 
 
 <script>
+	$(document).ready(function() { $('.carousel').carousel(); });
+	$(document).ready(function() { $('.slider').slider(); });
+      
 
 	function abrirModalLoad()
 	{

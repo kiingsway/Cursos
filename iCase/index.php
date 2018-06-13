@@ -143,7 +143,7 @@
 ?>
 
 	<div class="container">
-		<h4 class="centered" id="hCentroCusto">Centro de Custo: 99 - Congresso 2018</h4>
+		<h4 class="centered" id="hCentroCusto">Centro de Custo: <span><?php if (isset($_GET['curso'])) echo $centro_custo." - ".$centro_custoDetalhes; ?></span></h4>
 		<div style="background-color: #f3f3f4;" class="container-fluid">
 			<h5><i class="fa fa-check-square-o"></i> Cadastrar Atividade</h5>
 			<hr>
@@ -162,7 +162,7 @@
 				</div>
     			<div class="col">
 					<label for="atvDescricaoCentroCusto">Descrição</label>
-					<input type="text" class="form-control" id="atvDescricaoCentroCusto" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$centro_custoDetalhes."'"; ?>>
+					<input type="text" class="form-control" id="atvDescricaoCentroCusto" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".strtoupper($centro_custoDetalhes)."'"; ?>>
 				</div>
 			</div>
 			<div class="row">
@@ -436,19 +436,19 @@
 					</div>
 					<div class="col-2">
 						<label><b>Valor</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_lote1.",00'"; ?>>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_lote1, 2, ',', '.')."'"; ?>>
 					</div>
 					<div class="col-2">
 						<label><b>Valor sócio</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_cbr_lote1.",00'"; ?>>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_cbr_lote1, 2, ',', '.')."'"; ?>>
 					</div>
 					<div class="col-2">
 						<label><b>Valor não quite</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_nao_quite_lote1.",00'"; ?>>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_nao_quite_lote1, 2, ',', '.')."'"; ?>>
 					</div>
 					<div class="col">
 						<label><b>Valor parceiro</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".$valor_parceiro_lote1.",00'"; ?>>
+						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_parceiro_lote1, 2, ',', '.')."'"; ?>>
 					</div>
 					<div class="col">
 						<label><b>Vencimento</b></label>

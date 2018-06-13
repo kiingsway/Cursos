@@ -5,7 +5,14 @@
   <title>Chosen: A jQuery Plugin by Harvest to Tame Unwieldy Select Boxes</title>
   <link rel="stylesheet" href="docsupport/prism.css">
   <link rel="stylesheet" href="chosen.css">
-
+  <style type="text/css">
+        #onimage{
+width:100%;
+height:100%;
+background: url(img/boleto.jpg) 50% 0 no-repeat;
+background-size:cover;
+}
+  </style>
 </head>
 <body>
 
@@ -269,5 +276,11 @@
   <script src="docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
   <script src="docsupport/init.js" type="text/javascript" charset="utf-8"></script>
   </form>
+
+<div id="onimage">hey there!<br>www<br>www<br>www<br>www<br>www<br>www<br>www<br>www<br>www</div>
+
+
+
+
 </body>
 </html>
