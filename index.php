@@ -13,7 +13,7 @@
 
     <style type="text/css">
     * { font-size: 14px !important };
-    p { display: inline };
+    p { display: inline !important};
     </style>
 </head>
 <body>
@@ -476,9 +476,9 @@
       <div class="col s12 m6">
           <div class="card grey lighten-3">
               <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <span class="card-text tituloCursoExemplo"></span>
+                  <p><b>Data da realização: </b><span class="dataInicialCursoExemplo"></span> - <span class="dataFinalCursoExemplo"></span></p>              
+                  <p><b>Horario: </b><span class="horaInicialCursoExemplo"></span> às <span class="horaFinalCursoExemplo"></span></p>
                   <p>
                     <label>
                         <input class="with-gap" name="group1" type="radio"  />
@@ -487,16 +487,16 @@
                 </p>
               </div>
               <div class="card-action">
-                <p class="red-text">Não Sócio</p>
+                <span class="red-text">Não Sócio</span>
             </div>
           </div>
       </div>
       <div class="col s12 m6">
           <div class="card grey lighten-3">
               <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <span class="card-text tituloCursoExemplo"></span>
+                  <p><b>Data da realização: </b><span class="dataInicialCursoExemplo"></span> - <span class="dataFinalCursoExemplo"></span></p>              
+                  <p><b>Horario: </b><span class="horaInicialCursoExemplo"></span> às <span class="horaFinalCursoExemplo"></span></p>
                   <p>
                     <label>
                         <input class="with-gap" name="group1" type="radio"  />
@@ -505,16 +505,16 @@
                 </p>
               </div>
               <div class="card-action">
-                <p class="red-text">Sócio CBR</p>
+                <span class="red-text">Sócio CBR</span>
             </div>
           </div>
       </div>
       <div class="col s12 m6">
           <div class="card grey lighten-3">
               <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <span class="card-text tituloCursoExemplo"></span>
+                  <p><b>Data da realização: </b><span class="dataInicialCursoExemplo"></span> - <span class="dataFinalCursoExemplo"></span></p>              
+                  <p><b>Horario: </b><span class="horaInicialCursoExemplo"></span> às <span class="horaFinalCursoExemplo"></span></p>
                   <p>
                     <label>
                         <input class="with-gap" name="group1" type="radio"  />
@@ -523,16 +523,16 @@
                 </p>
               </div>
               <div class="card-action">
-                <p class="red-text">Sócio ABCDI</p>
+                <span class="red-text">Sócio ABCDI</span>
             </div>
           </div>
       </div>
       <div class="col s12 m6">
           <div class="card grey lighten-3">
               <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <span class="card-text tituloCursoExemplo"></span>
+                  <p><b>Data da realização: </b><span class="dataInicialCursoExemplo"></span> - <span class="dataFinalCursoExemplo"></span></p>              
+                  <p><b>Horario: </b><span class="horaInicialCursoExemplo"></span> às <span class="horaFinalCursoExemplo"></span></p>
                   <p>
                     <label>
                         <input class="with-gap" name="group1" type="radio"  />
@@ -541,16 +541,16 @@
                 </p>
               </div>
               <div class="card-action">
-                <p class="red-text">Sócio Não Quite</p>
+                <span class="red-text">Sócio CBR não quite</span>
             </div>
           </div>
       </div>
       <div class="col s12 m6">
           <div class="card grey lighten-3">
               <div class="card-content">
-                  <span class="card-text tituloCursoExemplo"></span><br><br>
-                  <p><b>Data da realização: </b><p class="dataInicialCursoExemplo"></p> - <p class="dataFinalCursoExemplo"></p></p><br>
-                  <p><b>Horario: </b><p class="horaInicialCursoExemplo"></p> às <p class="horaFinalCursoExemplo"></p></p><br><br>
+                  <span class="card-text tituloCursoExemplo"></span>
+                  <p><b>Data da realização: </b><span class="dataInicialCursoExemplo"></span> - <span class="dataFinalCursoExemplo"></span></p>              
+                  <p><b>Horario: </b><span class="horaInicialCursoExemplo"></span> às <span class="horaFinalCursoExemplo"></span></p>
                   <p>
                     <label>
                         <input class="with-gap" name="group1" type="radio"  />
@@ -559,10 +559,13 @@
                 </p>
               </div>
               <div class="card-action">
-                <p class="red-text">Sócio Entidade Parceira</p>
+                <span class="red-text">Sócio Entidade Parceira</span>
             </div>
           </div>
       </div>
+      
+
+
   </div>
 </div>
 
