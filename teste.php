@@ -275,12 +275,6 @@ background-size:cover;
   <script src="chosen.jquery.js" type="text/javascript"></script>
   <script src="docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
   <script src="docsupport/init.js" type="text/javascript" charset="utf-8"></script>
-  </form>
-
-<div id="onimage">hey there!<br>www<br>www<br>www<br>www<br>www<br>www<br>www<br>www<br>www</div>
-
-
-
 
 </body>
 </html>

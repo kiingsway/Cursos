@@ -55,6 +55,7 @@
             $valor_nao_quite_lote2 = $cursodb['valor_nao_quite_lote2'];
             $valor_parceiro_lote2 = $cursodb['valor_parceiro_lote2'];
             $tipo_vencimento_lote2 = $cursodb['tipo_vencimento_lote2'];
+            $tipo_vencimento_lote2Detalhes;
             $n_dias_lote2 = $cursodb['n_dias_lote2'];
             $limite_vencimento_lote2 = $cursodb['limite_vencimento_lote2'];
             $data_inicio_lote3 = $cursodb['data_inicio_lote3'];
@@ -65,6 +66,7 @@
             $valor_nao_quite_lote3 = $cursodb['valor_nao_quite_lote3'];
             $valor_parceiro_lote3 = $cursodb['valor_parceiro_lote3'];
             $tipo_vencimento_lote3 = $cursodb['tipo_vencimento_lote3'];
+            $tipo_vencimento_lote3Detalhes;
             $n_dias_lote3 = $cursodb['n_dias_lote3'];
             $limite_vencimento_lote3 = $cursodb['limite_vencimento_lote3'];
             $data_inicio_lote4 = $cursodb['data_inicio_lote4'];
@@ -75,6 +77,7 @@
             $valor_nao_quite_lote4 = $cursodb['valor_nao_quite_lote4'];
             $valor_parceiro_lote4 = $cursodb['valor_parceiro_lote4'];
             $tipo_vencimento_lote4 = $cursodb['tipo_vencimento_lote4'];
+            $tipo_vencimento_lote4Detalhes;
             $n_dias_lote4 = $cursodb['n_dias_lote4'];
             $limite_vencimento_lote4 = $cursodb['limite_vencimento_lote4'];
 
@@ -135,6 +138,42 @@
             		break;
             	case '3':
             		$tipo_vencimento_lote1Detalhes = "Data da Inscrição + n dias";
+            		break;
+            }
+
+            switch ($tipo_vencimento_lote2) {
+            	case '1':
+            		$tipo_vencimento_lote2Detalhes = "Data da Inscrição + n dias";
+            		break;
+            	case '2':
+            		$tipo_vencimento_lote2Detalhes = "Vencimento fixo";
+            		break;
+            	case '3':
+            		$tipo_vencimento_lote2Detalhes = "Data da Inscrição + n dias";
+            		break;
+            }
+
+            switch ($tipo_vencimento_lote3) {
+            	case '1':
+            		$tipo_vencimento_lote3Detalhes = "Data da Inscrição + n dias";
+            		break;
+            	case '2':
+            		$tipo_vencimento_lote3Detalhes = "Vencimento fixo";
+            		break;
+            	case '3':
+            		$tipo_vencimento_lote3Detalhes = "Data da Inscrição + n dias";
+            		break;
+            }
+
+            switch ($tipo_vencimento_lote4) {
+            	case '1':
+            		$tipo_vencimento_lote4Detalhes = "Data da Inscrição + n dias";
+            		break;
+            	case '2':
+            		$tipo_vencimento_lote4Detalhes = "Vencimento fixo";
+            		break;
+            	case '3':
+            		$tipo_vencimento_lote4Detalhes = "Data da Inscrição + n dias";
             		break;
             }
         }
@@ -326,7 +365,16 @@
 			<br>
 		</div>
 		<br><br>
-		<h2>Lote 1</h2>
+		<?php
+        $queryLotes = "SELECT janelas_pagamento FROM tb_criar_cursos WHERE id = ". $_GET['curso'];
+        $resultLotes = mysqli_query($db, $queryLotes);
+        $jnla = mysqli_fetch_assoc($resultLotes);
+        for ($i = 1; $i <= $jnla['janelas_pagamento']; $i++)
+        {
+        	echo "<h2>Lote ".$i."</h2>";
+        
+        ?>
+		
 		<div style="background-color: #f3f3f4;" class="container">
 			<h5><i class="fa fa-check-square-o"></i> Editar plano de pagamento</h5>
 			<hr>
@@ -345,11 +393,41 @@
 				</div>
 				<div class="col-2">
 					<label>Data de início</label>
-					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$data_inicio_lote1."'"; ?>>
+					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar"
+					<?php if (isset($_GET['curso'])) switch ($i) {
+						case '1':
+							echo "value='".$data_inicio_lote1."'";
+							break;
+						case '2':
+							echo "value='".$data_inicio_lote2."'";
+							break;
+						case '3':
+							echo "value='".$data_inicio_lote3."'";
+							break;
+						case '4':
+							echo "value='".$data_inicio_lote4."'";
+							break;
+					}?>
+					>
 				</div>
 				<div class="col-2">
 					<label>Data de término</label>
-					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar" <?php if (isset($_GET['curso'])) echo "value='".$data_fim_lote1."'"; ?>>
+					<input type="text" class="form-control" data-toggle="tooltip" data-placement="top" title="Clique para copiar"
+					<?php if (isset($_GET['curso'])) switch ($i) {
+						case '1':
+							echo "value='".$data_fim_lote1."'";
+							break;
+						case '2':
+							echo "value='".$data_fim_lote2."'";
+							break;
+						case '3':
+							echo "value='".$data_fim_lote3."'";
+							break;
+						case '4':
+							echo "value='".$data_fim_lote4."'";
+							break;
+					}?>
+					>
 				</div>
 			</div>
 			<div class="row">
@@ -436,23 +514,104 @@
 					</div>
 					<div class="col-2">
 						<label><b>Valor</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_lote1, 2, ',', '.')."'"; ?>>
+						<input type="text" class="form-control"
+						<?php if (isset($_GET['curso'])) switch ($i) {
+							case '1':
+							echo "value='R$ ".number_format($valor_lote1, 2, ',', '.')."'";
+							break;
+						case '2':
+							echo "value='R$ ".number_format($valor_lote2, 2, ',', '.')."'";
+							break;
+						case '3':
+							echo "value='R$ ".number_format($valor_lote3, 2, ',', '.')."'";
+							break;
+						case '4':
+							echo "value='R$ ".number_format($valor_lote4, 2, ',', '.')."'";
+							break;
+						}
+						?>
+						>
 					</div>
 					<div class="col-2">
 						<label><b>Valor sócio</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_cbr_lote1, 2, ',', '.')."'"; ?>>
+						<input type="text" class="form-control"
+						<?php if (isset($_GET['curso'])) switch ($i) {
+							case '1':
+							echo "value='R$ ".number_format($valor_cbr_lote1, 2, ',', '.')."'";
+							break;
+						case '2':
+							echo "value='R$ ".number_format($valor_cbr_lote2, 2, ',', '.')."'";
+							break;
+						case '3':
+							echo "value='R$ ".number_format($valor_cbr_lote3, 2, ',', '.')."'";
+							break;
+						case '4':
+							echo "value='R$ ".number_format($valor_cbr_lote4, 2, ',', '.')."'";
+							break;
+						}
+						?>
+						>
 					</div>
 					<div class="col-2">
 						<label><b>Valor não quite</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_nao_quite_lote1, 2, ',', '.')."'"; ?>>
+						<input type="text" class="form-control"
+						<?php if (isset($_GET['curso'])) switch ($i) {
+							case '1':
+							echo "value='R$ ".number_format($valor_nao_quite_lote1, 2, ',', '.')."'";
+							break;
+						case '2':
+							echo "value='R$ ".number_format($valor_nao_quite_lote2, 2, ',', '.')."'";
+							break;
+						case '3':
+							echo "value='R$ ".number_format($valor_nao_quite_lote3, 2, ',', '.')."'";
+							break;
+						case '4':
+							echo "value='R$ ".number_format($valor_nao_quite_lote4, 2, ',', '.')."'";
+							break;
+						}
+						?>
+						>
 					</div>
 					<div class="col">
 						<label><b>Valor parceiro</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='R$ ".number_format($valor_parceiro_lote1, 2, ',', '.')."'"; ?>>
+						<input type="text" class="form-control"
+						<?php if (isset($_GET['curso'])) switch ($i) {
+							case '1':
+							echo "value='R$ ".number_format($valor_parceiro_lote1, 2, ',', '.')."'";
+							break;
+						case '2':
+							echo "value='R$ ".number_format($valor_parceiro_lote2, 2, ',', '.')."'";
+							break;
+						case '3':
+							echo "value='R$ ".number_format($valor_parceiro_lote3, 2, ',', '.')."'";
+							break;
+						case '4':
+							echo "value='R$ ".number_format($valor_parceiro_lote4, 2, ',', '.')."'";
+							break;
+						}
+						?>
+						>
 					</div>
 					<div class="col">
+
 						<label><b>Vencimento</b></label>
-						<input type="text" class="form-control" <?php if (isset($_GET['curso'])) echo "value='".$limite_vencimento_lote1."'"; ?>>
+						<input type="text" class="form-control"
+						<?php if (isset($_GET['curso'])) switch ($i) {
+						case '1':
+							echo "value='".$limite_vencimento_lote1."'";
+							break;
+						case '2':
+							echo "value='".$limite_vencimento_lote2."'";
+							break;
+						case '3':
+							echo "value='".$limite_vencimento_lote3."'";
+							break;
+						case '4':
+							echo "value='".$limite_vencimento_lote4."'";
+							break;
+						}
+						?>
+						>
 					</div>
 				</div><br>
 			</div><br>
@@ -463,11 +622,56 @@
 				<div class="row">
 					<div class="col-6">
 						<label>Tipo de vencimento da parcela</label>
-						<select class="custom-select"><option><?php if (isset($_GET['curso'])) echo $tipo_vencimento_lote1Detalhes; ?></option></select>
+						<select class="custom-select">
+							<option><?php if (isset($_GET['curso']))
+							//echo $tipo_vencimento_lote1Detalhes;
+							switch ($i) {
+								case '1':
+									echo $tipo_vencimento_lote1Detalhes;
+									break;
+								case '2':
+									echo $tipo_vencimento_lote2Detalhes;
+									break;
+								case '3':
+									echo $tipo_vencimento_lote3Detalhes;
+									break;
+								case '4':
+									echo $tipo_vencimento_lote4Detalhes;
+									break;
+							}
+							 ?></option>
+						</select>
 					</div>
 					<div class="col-2">
 						<label><b>Dias:</b></label>
-						<input type="text" class="form-control" <?php switch ($tipo_vencimento_lote1) {case '1': echo "value='".$n_dias_lote1."'"; break; case '2': echo "value=''"; break;case '3': echo "value='0'"; break;} ?>>
+						<input type="text" class="form-control"
+						<?php
+						switch ($tipo_vencimento_lote1)
+						{
+							case '1':
+							switch ($i) {
+								case '1':
+									echo "value='".$n_dias_lote1."'";
+									break;
+								case '2':
+									echo "value='".$n_dias_lote2."'";
+									break;
+								case '3':
+									echo "value='".$n_dias_lote3."'";
+									break;
+								case '4':
+									echo "value='".$n_dias_lote4."'";
+									break;
+								}
+							break;
+							case '2':
+							echo "value=''";
+							break;
+							case '3':
+							echo "value='0'";
+							break;
+						} ?>
+						>
 					</div>
 				</div><br>
 			</div>
@@ -497,8 +701,9 @@
 				</div><br>
 			</div><br>
 		</div>
-
-
+		<?php
+        }
+		?>
 	</div>
 	
 

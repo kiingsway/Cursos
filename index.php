@@ -595,7 +595,7 @@
                 else echo '<a class="btn-floating waves-effect waves-light green"><i class="material-icons">done</i></a>';
                 echo "</td>";
                 echo "<td>";
-                echo '<a href="iCase/index.php?curso='.$curso['id'].'" class="btn-floating waves-effect waves-light blue"><i class="material-icons">remove_red_eye</i></a>';
+                echo '<a href="iCase/index.php?curso='.$curso['id'].'" target="_blank" class="btn-floating waves-effect waves-light blue"><i class="material-icons">remove_red_eye</i></a>';
                 echo "</td>";
                 echo "</tr>";
             }
