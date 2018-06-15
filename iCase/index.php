@@ -3,8 +3,8 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/chosen.css">
-  	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="docsupport/prism.css">
+  	<link rel="stylesheet" href="chosen.css">
 	<title>Teste</title>
 </head>
 <body>
@@ -47,8 +47,8 @@
             $tipo_vencimento_lote1Detalhes;
             $n_dias_lote1 = $cursodb['n_dias_lote1'];
             $limite_vencimento_lote1 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote1'])));
-            $data_inicio_lote2 = $cursodb['data_inicio_lote2'];
-            $data_fim_lote2 = $cursodb['data_fim_lote2'];
+            $data_inicio_lote2 = implode("/", array_reverse(explode("-", $cursodb['data_inicio_lote2'])));
+            $data_fim_lote2 = implode("/", array_reverse(explode("-", $cursodb['data_fim_lote2'])));
             $valor_lote2 = $cursodb['valor_lote2'];
             $valor_cbr_lote2 = $cursodb['valor_cbr_lote2'];
             $valor_abcdi_lote2 = $cursodb['valor_abcdi_lote2'];
@@ -57,9 +57,9 @@
             $tipo_vencimento_lote2 = $cursodb['tipo_vencimento_lote2'];
             $tipo_vencimento_lote2Detalhes;
             $n_dias_lote2 = $cursodb['n_dias_lote2'];
-            $limite_vencimento_lote2 = $cursodb['limite_vencimento_lote2'];
-            $data_inicio_lote3 = $cursodb['data_inicio_lote3'];
-            $data_fim_lote3 = $cursodb['data_fim_lote3'];
+            $limite_vencimento_lote2 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote2'])));
+            $data_inicio_lote3 = implode("/", array_reverse(explode("-", $cursodb['data_inicio_lote3'])));
+            $data_fim_lote3 = implode("/", array_reverse(explode("-", $cursodb['data_fim_lote3'])));
             $valor_lote3 = $cursodb['valor_lote3'];
             $valor_cbr_lote3 = $cursodb['valor_cbr_lote3'];
             $valor_abcdi_lote3 = $cursodb['valor_abcdi_lote3'];
@@ -68,9 +68,9 @@
             $tipo_vencimento_lote3 = $cursodb['tipo_vencimento_lote3'];
             $tipo_vencimento_lote3Detalhes;
             $n_dias_lote3 = $cursodb['n_dias_lote3'];
-            $limite_vencimento_lote3 = $cursodb['limite_vencimento_lote3'];
-            $data_inicio_lote4 = $cursodb['data_inicio_lote4'];
-            $data_fim_lote4 = $cursodb['data_fim_lote4'];
+            $limite_vencimento_lote3 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote3'])));
+            $data_inicio_lote4 = implode("/", array_reverse(explode("-", $cursodb['data_inicio_lote4'])));
+            $data_fim_lote4 = implode("/", array_reverse(explode("-", $cursodb['data_fim_lote4'])));
             $valor_lote4 = $cursodb['valor_lote4'];
             $valor_cbr_lote4 = $cursodb['valor_cbr_lote4'];
             $valor_abcdi_lote4 = $cursodb['valor_abcdi_lote4'];
@@ -79,7 +79,7 @@
             $tipo_vencimento_lote4 = $cursodb['tipo_vencimento_lote4'];
             $tipo_vencimento_lote4Detalhes;
             $n_dias_lote4 = $cursodb['n_dias_lote4'];
-            $limite_vencimento_lote4 = $cursodb['limite_vencimento_lote4'];
+            $limite_vencimento_lote4 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote4'])));
 
             switch ($centro_custo) {
             	case '98':
@@ -371,7 +371,7 @@
         $jnla = mysqli_fetch_assoc($resultLotes);
         for ($i = 1; $i <= $jnla['janelas_pagamento']; $i++)
         {
-        	echo "<h2>Lote ".$i."</h2>";
+        	if ($jnla['janelas_pagamento'] > 1) echo "<h2>Lote ".$i."</h2>";        	 
         
         ?>
 		
@@ -429,14 +429,22 @@
 					}?>
 					>
 				</div>
-			</div>
+			</div><br>
 			<div class="row">
-				<div class="col">
-					<label><b>Categoria(s)</b></label>
-					<select data-placeholder="Choose a Country..." class="chosen-select" multiple tabindex="4">
-						<option value="a">a</option>
-						<option value="b">b</option>
-						<option value="c">c</option>
+				<div class="col-12">
+					<label><b>Categoria(s)</b></label><br>
+					<select data-placeholder=" " class="chosen-select" multiple style="width:100%;">
+						<option value="1"<?php if (isset($_GET['curso'])) if(in_array('1', $categorias)) echo 'selected'; ?>>APERFEIÇOANDO (SÓCIO CBR)</option>
+						<option value="2"<?php if (isset($_GET['curso'])) if(in_array('2', $categorias)) echo 'selected'; ?>>ASPIRANTE (SÓCIO CBR)</option>
+						<option value="3"<?php if (isset($_GET['curso'])) if(in_array('3', $categorias)) echo 'selected'; ?>>RESIDENTE (SÓCIO CBR)</option>
+						<option value="4"<?php if (isset($_GET['curso'])) if(in_array('4', $categorias)) echo 'selected'; ?>>COLIGADO (SÓCIO CBR)</option>
+						<option value="5"<?php if (isset($_GET['curso'])) if(in_array('5', $categorias)) echo 'selected'; ?>>TITULAR (SÓCIO CBR)</option>
+						<option value="6"<?php if (isset($_GET['curso'])) if(in_array('6', $categorias)) echo 'selected'; ?>>TITULAR/RESIDENTE (SÓCIO CBR)</option>
+						<option value="7"<?php if (isset($_GET['curso'])) if(in_array('7', $categorias)) echo 'selected'; ?>>TITULAR/APERFEIÇOANDO (SÓCIO CBR)</option>
+						<option value="8"<?php if (isset($_GET['curso'])) if(in_array('8', $categorias)) echo 'selected'; ?>>ABCDI</option>
+						<option value="9"<?php if (isset($_GET['curso'])) if(in_array('9', $categorias)) echo 'selected'; ?>>PADRÃO (NÃO SÓCIO)</option>
+						<option value="10"<?php if (isset($_GET['curso'])) if(in_array('10', $categorias)) echo 'selected'; ?>>MÉDICOS (NÃO SÓCIO)</option>
+						<option value="11"<?php if (isset($_GET['curso'])) if(in_array('11', $categorias)) echo 'selected'; ?>>NÃO SÓCIO ABCDI</option>
 					</select>
 				</div>
 			</div><br>
@@ -624,7 +632,6 @@
 						<label>Tipo de vencimento da parcela</label>
 						<select class="custom-select">
 							<option><?php if (isset($_GET['curso']))
-							//echo $tipo_vencimento_lote1Detalhes;
 							switch ($i) {
 								case '1':
 									echo $tipo_vencimento_lote1Detalhes;
@@ -711,10 +718,12 @@
 	<script src="js/chosen.jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 	
-	<script src="js/chosen.jquery.js" type="text/javascript"></script>
-	<script src="js/prism.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/init.js" type="text/javascript" charset="utf-8"></script>
+  <script src="chosen.jquery.js" type="text/javascript"></script>
+  <script src="docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+  <script src="docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+	
 	<script>
 		$(function () {
 		  $('[data-toggle="tooltip"]').tooltip()

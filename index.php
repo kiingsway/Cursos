@@ -63,8 +63,8 @@
             $tipo_vencimento_lote1 = $cursodb['tipo_vencimento_lote1']; 
             $n_dias_lote1 = $cursodb['n_dias_lote1'];
             $limite_vencimento_lote1 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote1'])));
-            $data_inicio_lote2 = $cursodb['data_inicio_lote2'];
-            $data_fim_lote2 = $cursodb['data_fim_lote2'];
+            $data_inicio_lote2 = implode("/", array_reverse(explode("-", $cursodb['data_inicio_lote2'])));
+            $data_fim_lote2 = implode("/", array_reverse(explode("-", $cursodb['data_fim_lote2'])));
             $valor_lote2 = $cursodb['valor_lote2'];
             $valor_cbr_lote2 = $cursodb['valor_cbr_lote2'];
             $valor_abcdi_lote2 = $cursodb['valor_abcdi_lote2'];
@@ -72,9 +72,9 @@
             $valor_parceiro_lote2 = $cursodb['valor_parceiro_lote2'];
             $tipo_vencimento_lote2 = $cursodb['tipo_vencimento_lote2'];
             $n_dias_lote2 = $cursodb['n_dias_lote2'];
-            $limite_vencimento_lote2 = $cursodb['limite_vencimento_lote2'];
-            $data_inicio_lote3 = $cursodb['data_inicio_lote3'];
-            $data_fim_lote3 = $cursodb['data_fim_lote3'];
+            $limite_vencimento_lote2 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote2'])));
+            $data_inicio_lote3 = implode("/", array_reverse(explode("-", $cursodb['data_inicio_lote3'])));
+            $data_fim_lote3 = implode("/", array_reverse(explode("-", $cursodb['data_fim_lote3'])));
             $valor_lote3 = $cursodb['valor_lote3'];
             $valor_cbr_lote3 = $cursodb['valor_cbr_lote3'];
             $valor_abcdi_lote3 = $cursodb['valor_abcdi_lote3'];
@@ -82,9 +82,9 @@
             $valor_parceiro_lote3 = $cursodb['valor_parceiro_lote3'];
             $tipo_vencimento_lote3 = $cursodb['tipo_vencimento_lote3'];
             $n_dias_lote3 = $cursodb['n_dias_lote3'];
-            $limite_vencimento_lote3 = $cursodb['limite_vencimento_lote3'];
-            $data_inicio_lote4 = $cursodb['data_inicio_lote4'];
-            $data_fim_lote4 = $cursodb['data_fim_lote4'];
+            $limite_vencimento_lote3 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote3'])));
+            $data_inicio_lote4 = implode("/", array_reverse(explode("-", $cursodb['data_inicio_lote4'])));
+            $data_fim_lote4 = implode("/", array_reverse(explode("-", $cursodb['data_fim_lote4'])));
             $valor_lote4 = $cursodb['valor_lote4'];
             $valor_cbr_lote4 = $cursodb['valor_cbr_lote4'];
             $valor_abcdi_lote4 = $cursodb['valor_abcdi_lote4'];
@@ -92,7 +92,7 @@
             $valor_parceiro_lote4 = $cursodb['valor_parceiro_lote4'];
             $tipo_vencimento_lote4 = $cursodb['tipo_vencimento_lote4'];
             $n_dias_lote4 = $cursodb['n_dias_lote4'];
-            $limite_vencimento_lote4 = $cursodb['limite_vencimento_lote4'];
+            $limite_vencimento_lote4 = implode("/", array_reverse(explode("-", $cursodb['limite_vencimento_lote4'])));
         }
     }
     
