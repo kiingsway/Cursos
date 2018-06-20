@@ -135,6 +135,7 @@
                 <option value="588" <?php if (isset($_GET['curso'])) if ($conta_caixa == 588) echo 'selected'; ?>>(588) 1.4.01.11 - ESOR - Curso de Radiologia</option>
                 <option value="288" <?php if (isset($_GET['curso'])) if ($conta_caixa == 288) echo 'selected'; ?>>(288) 1.8.01 - Inscrições para Curso [PADI]</option>
                 <option value="591" <?php if (isset($_GET['curso'])) if ($conta_caixa == 591) echo 'selected'; ?>>(591) 1.8.03 - Inscrições para Curso Gestão de Clínicas</option>
+                <option value="593" <?php if (isset($_GET['curso'])) if ($conta_caixa == 593) echo 'selected'; ?>>(593) 1.4.04.06 - Workshop ABCDI</option>
                 <option value="0">Outro... (mande e-mail informando)</option>
             </select>
             <label for="input_text" class="tooltipped" data-position="top" data-tooltip="Cada curso possui sua Conta Caixa. Qualquer dúvida sobre pergunte ao Financeiro">Conta Caixa <i class="material-icons">help</i></label>
