@@ -11,6 +11,7 @@ include '../conta.php';
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try{
     //Server settings
+    $mail->CharSet = 'UTF-8';
     $mail->SMTPDebug = 0;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.office365.com';                   // Specify main and backup SMTP servers

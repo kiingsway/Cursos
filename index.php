@@ -12,8 +12,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style type="text/css">
+    
     * { font-size: 14px !important };
-    p { display: inline !important};
+
     </style>
 </head>
 <body>
@@ -102,11 +103,11 @@
   <div class="row">
     <form class="col s12" method="POST" action="#" onsubmit="abrirModalLoad()">
       <div class="row">
-        <div class="input-field col s12 m7">
+        <div class="input-field col s12 m8 l7">
             <input id="nomeCurso" name="nomeCurso" type="text" class="contar" data-length="80" onkeyup="trocarTitulo()" <?php if (isset($_GET['curso'])) echo "value='".$nome."'"; ?> required>
             <label for="nomeCurso" class="tooltipped" data-position="top" data-tooltip="Nome que aparecerá no momento da compra">Nome do curso <i class="material-icons">help</i></label>
         </div>
-        <div class="input-field col s6 m2">
+        <div class="input-field col s6 m4 l2">
             <select name="slctTipoAtv">
                 <option value="1" <?php if (isset($_GET['curso'])) if ($tipo_atividade == 1) echo 'selected'; ?>>Curso Presencial</option>
                 <option value="2" <?php if (isset($_GET['curso'])) if ($tipo_atividade == 2) echo 'selected'; ?>>Curso On-line</option>
@@ -114,7 +115,7 @@
             </select>
             <label for="form1">Tipo de atividade</label>
         </div>
-        <div class="input-field col s6 m3">
+        <div class="input-field col s6 m12 l3">
             <select class="custom-select" name="slctCentroCusto">
                 <option value="98" <?php if (isset($_GET['curso'])) if ($centro_custo == 98) echo 'selected'; ?>>[98] Vendas Online</option>
                 <option value="99" <?php if (isset($_GET['curso'])) if ($centro_custo == 99) echo 'selected'; ?>>[99] Congresso 2018</option>
@@ -126,7 +127,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12 m6">
+        <div class="input-field col s12 m12 l6">
             <select class="custom-select" name="slctContaCaixa">
                 <option value="10" <?php if (isset($_GET['curso'])) if ($conta_caixa == 10) echo 'selected'; ?>>(10) 1.1.06 - Inscrições Curso - AVR</option>
                 <option value="29" <?php if (isset($_GET['curso'])) if ($conta_caixa == 29) echo 'selected'; ?>>(29) 1.4.01.02 - Congresso Brasileiro Radiologia</option>
@@ -138,7 +139,7 @@
             </select>
             <label for="input_text" class="tooltipped" data-position="top" data-tooltip="Cada curso possui sua Conta Caixa. Qualquer dúvida sobre pergunte ao Financeiro">Conta Caixa <i class="material-icons">help</i></label>
         </div>
-        <div class="input-field col s4 m2">
+        <div class="input-field col s4 m4 l2">
             <p>
                 <label>
                     <input type="checkbox" class="filled-in" name="cbxCertificado" <?php if (isset($_GET['curso'])) if ($certificado == 1) echo 'checked'; ?> >
@@ -146,7 +147,7 @@
                 </label>
             </p>
         </div>
-        <div class="input-field col s4 m2">
+        <div class="input-field col s4 m4 l2">
             <p>
                 <label>
                     <input type="checkbox" class="filled-in" name="cbxPresenca" <?php if (isset($_GET['curso'])) if ($presenca == 1) echo 'checked'; ?> />
@@ -154,7 +155,7 @@
                 </label>
             </p>
         </div>
-        <div class="input-field col s4 m2">
+        <div class="input-field col s4 m4 l2">
             <p>
                 <label>
                     <input type="checkbox" class="filled-in" name="cbxEtiqueta" <?php if (isset($_GET['curso'])) if ($etiqueta == 1) echo 'checked'; ?> />
@@ -203,7 +204,7 @@
 
     <div class="checkbox-group required">
         <div class="row">
-            <h1><b>Sócio</b></h1>  
+            <p><b>Sócio</b></p>  
             <div class="input-field col s6 m3">
                 <td class="hoverable">
                     <label>
@@ -239,10 +240,10 @@
             </div>
             <div class="input-field col s6 m3">
                 <td class="hoverable"><label><input type="checkbox" class="filled-in" name="cbxCategorias[]" value="8" <?php if (isset($_GET['curso'])) if(in_array('8', $categorias)) echo 'checked'; ?>/><span>ABCDI</span></label></td>
-            </div>
+            </div><br><br>
         </div>
         <div class="row">
-            <h1><b>Não Sócio</b></h1>
+            <p><b>Não Sócio</b></p>
             <div class="input-field col s6 m3">
                 <td class="hoverable"><label><input type="checkbox" class="filled-in" name="cbxCategorias[]" value="9" <?php if (isset($_GET['curso'])) if(in_array('9', $categorias)) echo 'checked'; ?>/><span>Padrão</span></label></td>
             </div>
@@ -266,7 +267,7 @@
                 <label>Quantas janelas de pagamento?</label>
             </div>
         </div>
-        <div class="col s6 m3">
+        <div class="col s6 l3">
             <div class="input-field row">
                 <input name="dataInicialLote1" type="text" class="datepicker" required <?php if (isset($_GET['curso'])) echo 'value="'.$data_inicio_lote1.'"'; ?>/>
                 <label for="dataInicialLote1">Data inicial do Lote 1</label>
@@ -316,7 +317,7 @@
                 <label id="labelVenc1" for="vencimentoLote1">Limite de vencimento</label>
             </div>
         </div>
-        <div style="display: none" id="divJanela2" class="col s6 m3">
+        <div style="display: none" id="divJanela2" class="col s6 l3">
             <div class="input-field row">
                 <input name="dataInicialLote2" type="text" class="datepicker">
                 <label for="dataInicialLote2">Data inicial do Lote 2</label>
@@ -366,7 +367,7 @@
                 <label name="labelVenc2" for="vencimentoLote2">Limite de vencimento</label>
             </div>
         </div>
-        <div style="display: none" id="divJanela3" class="col s6 m3">
+        <div style="display: none" id="divJanela3" class="col s6 l3">
             <div class="input-field row">
                 <input name="dataInicialLote3" type="text" class="datepicker">
                 <label for="dataInicialLote3">Data inicial do Lote 3</label>
@@ -416,7 +417,7 @@
                 <label name="labelVenc3" for="vencimentoLote3">Limite de vencimento</label>
             </div>
         </div>
-        <div style="display: none" id="divJanela4" class="col s6 m3">
+        <div style="display: none" id="divJanela4" class="col s6 l3">
             <div class="input-field row">
                 <input name="dataInicialLote4" type="text" class="datepicker">
                 <label for="dataInicialLote4">Data inicial do Lote 4</label>
@@ -586,7 +587,7 @@
             while ($curso = mysqli_fetch_assoc($result)){
                 echo "<tr>";
                 echo "<td>";
-                echo "<a href='index.php?curso=".$curso['id']."' class='waves-effect waves-light btn-small' value='".$curso['id']."'>";
+                echo "<a style='font-size:13px !important' href='index.php?curso=".$curso['id']."' class='waves-effect waves-light btn-small' value='".$curso['id']."'>";
                 echo $curso['nome'];
                 echo "</a>";
                 echo "</td>";
