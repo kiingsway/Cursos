@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Maio-2018 às 08:39
+-- Generation Time: 20-Jun-2018 às 04:32
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -97,11 +97,9 @@ CREATE TABLE `tb_criar_cursos` (
 --
 
 INSERT INTO `tb_criar_cursos` (`id`, `nome`, `tipo_atividade`, `centro_custo`, `conta_caixa`, `certificado`, `presenca`, `etiqueta`, `data_inicio_curso`, `data_fim_curso`, `hora_inicio_curso`, `hora_fim_curso`, `data_inicio_inscricoes`, `data_fim_inscricoes`, `vagas`, `carga_horaria`, `categorias`, `janelas_pagamento`, `data_inicio_lote1`, `data_fim_lote1`, `valor_lote1`, `valor_cbr_lote1`, `valor_abcdi_lote1`, `valor_nao_quite_lote1`, `valor_parceiro_lote1`, `tipo_vencimento_lote1`, `n_dias_lote1`, `limite_vencimento_lote1`, `data_inicio_lote2`, `data_fim_lote2`, `valor_lote2`, `valor_cbr_lote2`, `valor_abcdi_lote2`, `valor_nao_quite_lote2`, `valor_parceiro_lote2`, `tipo_vencimento_lote2`, `n_dias_lote2`, `limite_vencimento_lote2`, `data_inicio_lote3`, `data_fim_lote3`, `valor_lote3`, `valor_cbr_lote3`, `valor_abcdi_lote3`, `valor_nao_quite_lote3`, `valor_parceiro_lote3`, `tipo_vencimento_lote3`, `n_dias_lote3`, `limite_vencimento_lote3`, `data_inicio_lote4`, `data_fim_lote4`, `valor_lote4`, `valor_cbr_lote4`, `valor_abcdi_lote4`, `valor_nao_quite_lote4`, `valor_parceiro_lote4`, `tipo_vencimento_lote4`, `n_dias_lote4`, `limite_vencimento_lote4`, `criado_em`, `criado_por`, `criado_no_icase`) VALUES
-(1, 'Curso de GestÃ£o de ClÃ­nicas 2018 - Sustentabilidade Financeira das ClÃ­nicas', 1, 98, 591, 1, 1, 0, '2018-09-20', '2018-09-21', '14:00:00', '21:00:00', '2018-05-15', '2018-09-15', 40, 18, '1,2,3,4,5,6,7,8,9,10,11', 1, '2018-05-15', '2018-09-15', 2859, 2859, 2143, 2859, 2859, 1, 2, '2018-09-15', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '2018-05-24 07:37:00', 'kingsway', 1),
+(1, 'Curso de GestÃ£o de ClÃ­nicas- Garantindo Sustentabilidade Financeira das ClÃ­nicas', 1, 98, 591, 1, 1, 0, '2018-09-20', '2018-09-21', '14:00:00', '21:00:00', '2018-05-15', '2018-09-15', 40, 18, '1,2,3,4,5,6,7,8,9,10,11', 1, '2018-05-15', '2018-09-15', 2859, 2859, 2143, 2859, 2859, 1, 2, '2018-09-15', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '2018-05-24 07:37:00', 'kingsway', 1),
 (2, 'III Curso de FormaÃ§Ã£o de Auditor Interno do Padi 2018', 1, 98, 288, 1, 1, 0, '2018-07-05', '2018-07-07', '08:30:00', '17:30:00', '2018-05-14', '2018-07-02', 40, 24, '1,2,3,4,5,6,7,8,9,10,11', 1, '2018-05-14', '2018-07-02', 2768, 2076, 2076, 2768, 2491, 1, 2, '2018-07-02', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '2018-05-24 07:53:40', 'kingsway', 1),
-(3, 'Teste', 1, 98, 10, 1, 1, 0, '2018-06-01', '2018-06-30', '00:00:00', '00:00:00', '2018-05-28', '2018-06-01', 20, 20, '1,2,5,6,9,10', 1, '2018-05-28', '2018-06-01', 1000, 2000, 3000, 4000, 5000, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '2018-05-28 20:43:25', 'kingsway', 0),
-(4, 'Teste', 1, 98, 10, 1, 1, 0, '2018-06-01', '2018-06-30', '00:00:00', '00:00:00', '2018-05-28', '2018-06-01', 20, 20, '1,2,5,6,9,10', 1, '2018-05-28', '2018-06-01', 1000, 2000, 3000, 4000, 5000, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '2018-05-28 20:44:57', 'kingsway', 0),
-(5, 'Teste', 1, 98, 10, 1, 1, 0, '2018-06-01', '2018-06-30', '00:00:00', '00:00:00', '2018-05-28', '2018-06-01', 20, 20, '1,2,5,6,9,10', 1, '2018-05-28', '2018-06-01', 1000, 2000, 3000, 4000, 5000, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '2018-05-28 20:46:54', 'kingsway', 0);
+(3, 'Curso GestÃ£o de ClÃ­nicas - Efetividade da relaÃ§Ã£o comercial com as operadoras', 1, 98, 591, 1, 1, 0, '2018-06-28', '2018-06-29', '00:00:00', '00:00:00', '2018-05-01', '2018-06-25', 40, 18, '1,2,3,4,5,6,7,8,9,10,11', 1, '2018-05-01', '2018-06-25', 2859, 2859, 2143, 2859, 2859, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '0000-00-00', '0000-00-00', 0, 0, 0, 0, 0, 1, 0, '0000-00-00', '2018-06-16 12:35:43', 'kingsway', 1);
 
 --
 -- Indexes for dumped tables
@@ -121,7 +119,7 @@ ALTER TABLE `tb_criar_cursos`
 -- AUTO_INCREMENT for table `tb_criar_cursos`
 --
 ALTER TABLE `tb_criar_cursos`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
