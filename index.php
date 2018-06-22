@@ -566,51 +566,45 @@
           </div>
       </div>
   </div>
-
-
-
-
 </div> <!-- Fim Container-->
 
-  <!-- Modal Structure -->
-  <div id="modalSalvos" class="modal bottom-sheet">
-    <div class="modal-content container">
-        <table>
-            <tr>
-                <th>Cursos enviados</th>
-                <th>Criado no iCase</th>
-                <th>Visualização</th>
-            </tr>
-        <?php
-            $db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
-            $query = "SELECT id, nome, criado_no_icase FROM tb_criar_cursos";
-            $result = mysqli_query($db, $query);
-            while ($curso = mysqli_fetch_assoc($result)){
-                echo "<tr>";
-                echo "<td>";
-                echo "<a style='font-size:13px !important' href='index.php?curso=".$curso['id']."' class='waves-effect waves-light btn-small' value='".$curso['id']."'>";
-                echo $curso['nome'];
-                echo "</a>";
-                echo "</td>";
-                echo "<td>";
-                if ($curso['criado_no_icase'] == 0) echo '<a class="btn-floating waves-effect waves-light red"><i class="material-icons">clear</i></a>';
-                else echo '<a class="btn-floating waves-effect waves-light green"><i class="material-icons">done</i></a>';
-                echo "</td>";
-                echo "<td>";
-                echo '<a href="iCase/index.php?curso='.$curso['id'].'" target="_blank" class="btn-floating waves-effect waves-light blue"><i class="material-icons">remove_red_eye</i></a>';
-                echo "</td>";
-                echo "</tr>";
-            }
-        ?>
-        </table>
-    </div>
-  </div>
+<!-- Modal Structure -->
+<div id="modalSalvos" class="modal bottom-sheet">
+	<div class="modal-content">
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+				<?php
+				$db = mysqli_connect('localhost', 'root', '', 'dbprocedimentos');
+				$query = "SELECT DISTINCT conta_caixa, (SELECT COUNT(DISTINCT conta_caixa) FROM `tb_criar_cursos`) AS Contar FROM `tb_criar_cursos` ORDER BY conta_caixa";
+				$result = mysqli_query($db, $query);
+				$i = 1;
+				while ($tab = mysqli_fetch_assoc($result))
+				{
+					$totalGuia = 12/$tab['Contar'];
+					echo '<li class="tab col s'.$totalGuia.'">';
+					echo '<a href="#tab'.$i.'">'.$tab['conta_caixa'].'</a>';
+					echo '</li>';
+					$i++;
+				}
 
-   <!-- Modal Structure -->
-  <div id="modalLoad" name="modalLoad" class="modal" style="width:300px; height: 250px;">
-    <div class="modal-content">
-    	<h4 class="center">Enviando...</h4>
-    	<div class="cssload-loader-inner">
+				echo '</ul>';
+
+				$i = 1;
+				while ($tab = mysqli_fetch_assoc($result)){
+					echo '<div id="tab'.$i.'" class="col s12">Test '.$i.'</div>';
+					$i++;
+				}
+					?>
+			</div>		</div>
+	</div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modalLoad" name="modalLoad" class="modal" style="width:300px; height: 250px;">
+	<div class="modal-content">
+		<h4 class="center">Enviando...</h4>
+		<div class="cssload-loader-inner">
 			<div class="cssload-cssload-loader-line-wrap-wrap">
 				<div class="cssload-loader-line-wrap"></div>
 			</div>
@@ -627,8 +621,8 @@
 				<div class="cssload-loader-line-wrap"></div>
 			</div>
 		</div>
-    </div>
-  </div>
+	</div>
+</div>
 
 <!-- JQuery -->
 <script src="js\jquery-3.3.1.slim.min.js"></script>
